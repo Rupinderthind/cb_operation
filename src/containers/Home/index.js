@@ -53,8 +53,6 @@ function Home(props) {
       		<RightSideBar />
       	</div>
       </div>
-
-
       <Modal isOpen={true}>
         <ModalBody>
           <div className="modalContent">
@@ -86,6 +84,23 @@ function Home(props) {
                   </li>
                 </ul>
               </div>
+              <div className="chipsCon">
+                <div className="listBox">
+                  <ul>
+                    <li>
+                      <a href="">
+                        <div className="userCon">
+                          <img src="images/avatar.png" />
+                        </div>
+                        White Jacques                                               
+                      </a>
+                      <div className="iconCon">
+                        <i className="fa fa-times" />
+                      </div> 
+                    </li>
+                  </ul>
+                </div>
+              </div>
               <h5 className="subHeading">Suggested Customers</h5>
               <div className="listBox">
                 <ul>
@@ -95,7 +110,10 @@ function Home(props) {
                         <img src="images/avatar.png" />
                       </div>
                       White Jacques
-                    </a>
+                      <div className="iconCon">
+                        <i className="fa fa-plus" />
+                      </div>
+                    </a>                     
                   </li>
                   <li>
                     <a href="">
@@ -103,7 +121,10 @@ function Home(props) {
                         <img src="images/avatar.png" />
                       </div>
                       White Jacques
-                    </a>
+                      <div className="iconCon">
+                        <i className="fa fa-plus" />
+                      </div>
+                    </a>                    
                   </li>
                   <li>
                     <a href="">
@@ -111,14 +132,17 @@ function Home(props) {
                         <img src="images/avatar.png" />
                       </div>
                       White Jacques
-                    </a>
+                      <div className="iconCon">
+                        <i className="fa fa-plus" />
+                      </div>
+                    </a>                   
                   </li>
                 </ul>
               </div>
             </div>
           </div>
         </ModalBody>
-        <ModalFooter>
+        <ModalFooter className="modalFooter">
           <Button color="secondary">Cancel</Button>{' '}
           <Button color="primary">Share</Button>
         </ModalFooter>

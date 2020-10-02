@@ -499,6 +499,30 @@ html, body, #root{
 			padding: 10px 0px;
 			margin: 0;
 		}
+		.chipsCon{
+			border: solid 1px #CED2D9;
+			margin: 10px 0px;
+			border-radius: 4px;
+			.listBox {
+				ul {
+					margin-bottom: 0;
+					li {
+						display: inline-flex;
+						margin: 2px;
+						background-color: #F2F3F5;
+						a {
+							padding: 2px 5px;
+							margin-bottom: 0;
+						}
+						.iconCon{
+							padding: 0px 10px 0px 5px;
+							display: flex;
+							align-items: center;
+						}
+					}
+				}
+			}
+		}
 	}
 	.itemList {
 		padding: 10px;
@@ -511,6 +535,13 @@ html, body, #root{
 	.listBox {
 		ul {
 			li {
+				a{
+					margin-bottom: 0;
+				}
+				.iconCon{
+			    float: right;
+			    padding-right: 5px;
+				}
 				a {
 					&:hover{
 						background: #F2F3F5;
@@ -519,11 +550,22 @@ html, body, #root{
 			}
 		}
 	}
-	.modal-footer {
-		.btn {
+}
+.modalFooter {
+	&.modal-footer{
+		border: none;
+    padding-top: 0px;
+		.btn{
+			font-size: 13px;
 			&.btn-secondary {
-
-			}
+		    background-color: #EDEFF2;
+		    border: 1px solid #CED2D9;
+		    color: #40444D;	    
+		  }
+		  &.btn-primary {
+		  	background-color: #000;
+		  	border: 1px solid #000;
+		  }
 		}
-	}
+	}	
 }

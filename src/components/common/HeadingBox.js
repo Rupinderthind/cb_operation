@@ -3,22 +3,31 @@ import React from 'react';
 function HeadingBox(props) {
   return (
     <div className="headingBox">
-      <div className="leftBar">
-        <h5>Products</h5>
-      </div>
+      {props.title ?
+        <div className="leftBar">
+          <h5>{props.title}</h5>
+        </div>
+        : 
+        null
+      }
+      
       <div className="centerBar">
         <ul>
-          <li className="active">
-            Available
-          </li>
-          <li>
-            Sold
-          </li>
+          {props.tabs.map((item, index) => {
+            return  <li className={props.activeTab === index && "active"} key={index} onClick={() => props.onChangeTab(index)}>
+                      {item}
+                    </li>
+          })}
         </ul>
       </div>
-      <div className="rightBar">
-        <i className="fa fa-search" />
-      </div>
+      {!props.noRightSection ?
+        <div className="rightBar">
+          <i className="fa fa-search" />
+        </div>
+        : 
+        null
+      }
+      
     </div>
   );
 }

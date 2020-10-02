@@ -13,8 +13,12 @@ html, body, #root{
 	flex-direction: row;
 	padding: 10px 15px;
 	background: #fff;
-	border-top: solid 10px #1c7c22;
+	border-top: solid 8px #3C7A30;
 	margin-bottom: 10px;
+	position: fixed;
+	width: 100%;
+	z-index: 1;
+	box-shadow: 0 0 10px #ccc;
 	.leftSide{
 		display: flex;
 		flex: 1;
@@ -35,6 +39,7 @@ html, body, #root{
 			display: flex;
 	    justify-content: center;
 	    align-items: center;
+	    margin: 0;
 			li {
 				display: inline-block;
 				padding: 0 10px;
@@ -43,6 +48,7 @@ html, body, #root{
 					color: #60656f;
 					font-weight: 700;
 					padding: 20px 5px;
+					font-size: 13px;
 					&.active {
 						color: #000;
 					}
@@ -64,13 +70,13 @@ html, body, #root{
 	display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin: 0;
 	li {
 		display: inline-block;
 		margin: 0 6px;
 		a {
 			padding: 8px;
-	    background: #edeff3;
-	    border-radius: 7px;
+	    border-radius: 50%;
 	    font-size: 18px;
 	    transition: all linear 0.2s 0s;
 	    width: 42px;
@@ -82,8 +88,12 @@ html, body, #root{
 	    align-items: center;
 	    justify-content: center;
 	    text-decoration: none;
+	    color: #40444D;
+	    &.defaultBG{
+	    	background: #edeff3;
+	    }
 			&:hover {
-				background: #dadce2
+				background: #E4E6EB
 			}
 			.badge {
 				position: absolute;
@@ -103,6 +113,7 @@ html, body, #root{
 
 .contentContainer{
 	display: flex;
+	padding-top: 85px;
 	.leftSidebar{
 		display: flex;
 		width: 400px;
@@ -121,6 +132,12 @@ html, body, #root{
 		align-items: center;
 		.centerBoxContainer{
 			max-width: 750px;
+			width: 100%;
+			height: 100%;
+			.contentArea{
+				min-height: calc(100% - 200px);
+				background: #fff;
+			}
 		}
 	}
 }
@@ -129,7 +146,7 @@ html, body, #root{
 	display: flex;
 	flex-direction: row;
 	background: #fff;
-	padding: 10px 15px;
+	padding: 5px 20px;
 	border-radius: 10px;
 	width: 100%;
 	margin-bottom: 10px;
@@ -139,6 +156,7 @@ html, body, #root{
 		align-items: center;
 		h5 {
 			font-size: 16px;
+			margin: 0;
 		}
 	}
 	.centerBar {
@@ -151,10 +169,11 @@ html, body, #root{
 			background: #f2f3f5;
 			padding: 4px;
 			border-radius: 4px;
+			margin: 0;
 			li{
 				display: inline-block;
 				cursor: pointer;
-				font-size: 16px;
+				font-size: 13px;
 				font-weight: 700;
 				padding: 10px;
 				border-radius: 4px;
@@ -188,12 +207,16 @@ html, body, #root{
 		padding: 10px;
 		h4{
 			color: #fff;
+			font-size: 15px;
+			margin: 0;
 		}
 		p{
 			color: #fff;
+			margin: 0;
 			span {
 				display: inline-block;
 				margin-right: 5px;
+				font-size: 13px;
 			}
 		}
 		.priceBtn {
@@ -212,12 +235,13 @@ html, body, #root{
 		background: #fff;
 		padding: 10px;
 		p {
-			font-size: 14px;
+			font-size: 13px;
+			margin: 0;
 		}
 		.viewAllLink {
 			text-decoration: none;
-			color: #a6aab1;
-			font-size: 14px;
+			color: #707580;
+			font-size: 13px;
 			display: inline-block;
 			margin-top: 10px;
 			transition: all linear 0.2s 0s;
@@ -258,14 +282,14 @@ html, body, #root{
 	}
 }
 
-.leftSidebarContent{
+.leftSidebarContent, .modalContent{
 	width: 100%;
 	iframe {
 		width: 100%;
 		height: 450px;
 	}
 	h4{
-		font-size: 20px;
+		font-size: 16px;
 		margin: 12px 0;
 		button{
 			float: right;
@@ -277,10 +301,10 @@ html, body, #root{
 		margin-top: 10px;
 		i{
 			position: absolute;
-			top: 10px;
+			top: 8px;
 			left: 10px;
 			color: #737a85;
-			font-size: 20px;
+			font-size: 14px;
 		}
 		input[type="text"]{
 			width: 100%;
@@ -292,6 +316,7 @@ html, body, #root{
 			padding-left: 40px;
 			transition: all linear 0.2s 0s;
 			outline: none;
+			height: 30px;
 			&:focus{
 				box-shadow: 0 0 20px #e8e5e5;
 			}
@@ -304,7 +329,7 @@ html, body, #root{
 				overflow: auto;
 				a{
 					display: block;
-			    font-size: 16px;
+			    font-size: 13px;
 			    font-weight: 700;
 			    text-decoration: none;
 			    overflow: auto;
@@ -334,6 +359,24 @@ html, body, #root{
 	}
 }
 
+.userCard{
+	line-height: 30px;
+	font-size: 13px;
+	font-weight: 500;
+	.userCon{
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		overflow: hidden;
+		float: left;
+		margin-right: 10px;
+		border: solid 1px #ccc;
+		img{
+			width: 100%;
+		}
+	}
+}
+
 .transparentBtn{
 	background: none;
 	border: none;
@@ -349,7 +392,7 @@ html, body, #root{
 			overflow: auto;
 			position: relative;
 			.itemImgBox{
-				width: 80px;
+				width: 60px;
 				float: left;
 
 				img {
@@ -362,22 +405,124 @@ html, body, #root{
 				padding-left: 10px;
 				padding-right: 100px;
 				h5{
-					font-size: 16px;
+					font-size: 13px;
 					white-space: nowrap;
 					overflow: hidden;
 					text-overflow: ellipsis;
+					margin: 0;
 				}
 				p{
+					margin: 0;
 					span{
 						margin-right: 5px;
+						font-size: 13px;
 					}
 				}
 				h6{
 					position: absolute;
 					right: 0;
-					font-size: 16px;
+					font-size: 13px;
     			top: 0;
 				}
+			}
+		}
+	}
+}
+
+
+.tableContent{
+	table {
+		width: 100%;
+		background: #fff;
+		padding: 0;
+		thead {
+			tr{
+				th{
+					border-bottom: solid 1px #CED2D9;		
+					padding: 10px;
+					font-size: 13px;
+					text-align: left;
+					font-weight: 600;
+				}
+			}
+		}
+		tbody{
+			tr{
+				transition: all linear 0.2s 0s;
+				&:hover{
+					background: #ecebeb;
+				}
+				td{
+					padding: 10px;
+					font-size: 13px;
+					font-weight: 500;
+				}
+			}
+		}
+	}
+}
+
+
+
+.modalContent{
+	z-index: 10;
+	background-color: #fff;
+	.modalHeader{
+		padding-bottom: 10px;
+		border-bottom: solid 1px #CED2D9;
+		.heading{
+			font-size: 16px;
+			font-weight: 700;
+			margin-bottom: 16px;
+		}
+		.headingBox {
+			padding: 0;
+			.centerBar {
+				width: 100%;
+				ul{
+					width: 100%;
+					display: flex;
+					li {
+						display: flex;
+						flex: 1;
+						align-items: center;
+						text-align: center;
+						justify-content: center;
+					}
+				}
+			}
+		}
+	}
+	.modalDetail{
+		.subHeading{
+			font-size: 10px;
+			padding: 10px 0px;
+			margin: 0;
+		}
+	}
+	.itemList {
+		padding: 10px;
+		background: #F2F3F5;
+		border-radius: 5px;
+		ul{
+			margin: 0;
+		}
+	}
+	.listBox {
+		ul {
+			li {
+				a {
+					&:hover{
+						background: #F2F3F5;
+					}
+				}
+			}
+		}
+	}
+	.modal-footer {
+		.btn {
+			&.btn-secondary {
+
 			}
 		}
 	}

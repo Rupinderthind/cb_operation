@@ -38,7 +38,7 @@ function Header(props) {
       			</a>
       		</li>
       		<li>
-      			<a href="">
+      			<a href="" className="defaultBG">
       				<i className="fa fa-user" />
       			</a>
       		</li>

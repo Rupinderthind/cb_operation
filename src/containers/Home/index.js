@@ -3,7 +3,7 @@ import Header from '../../components/common/Header'
 import HeadingBox from '../../components/common/HeadingBox'
 import ItemCard from '../../components/cards/ItemCard'
 import LeftSideBar from '../../components/cards/LeftSideBar'
-import RightSideBar from '../../components/cards/RightSideBar'
+import ListSideBar from '../../components/cards/ListSideBar'
 import TableContent from '../../components/common/TableContent'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
@@ -59,6 +59,23 @@ function Home(props) {
                     </li>
                   </ul>
                 </div>
+                <div className="chipsCon">
+                  <div className="listBox">
+                    <ul>
+                      <li>
+                        <a href="">
+                          <div className="userCon">
+                            <img src="images/avatar.png" />
+                          </div>
+                          White Jacques                                               
+                        </a>
+                        <div className="iconCon">
+                          <i className="fa fa-times" />
+                        </div> 
+                      </li>
+                    </ul>
+                  </div>
+                </div>
                 <h5 className="subHeading">Suggested Customers</h5>
                 <div className="listBox">
                   <ul>
@@ -68,6 +85,9 @@ function Home(props) {
                           <img src="images/avatar.png" />
                         </div>
                         White Jacques
+                        <div className="iconCon">
+                          <i className="fa fa-plus" />
+                        </div>
                       </a>
                     </li>
                     <li>
@@ -76,6 +96,9 @@ function Home(props) {
                           <img src="images/avatar.png" />
                         </div>
                         White Jacques
+                        <div className="iconCon">
+                          <i className="fa fa-plus" />
+                        </div>
                       </a>
                     </li>
                     <li>
@@ -84,6 +107,9 @@ function Home(props) {
                           <img src="images/avatar.png" />
                         </div>
                         White Jacques
+                        <div className="iconCon">
+                          <i className="fa fa-plus" />
+                        </div>
                       </a>
                     </li>
                   </ul>
@@ -110,6 +136,23 @@ function Home(props) {
                     </li>
                   </ul>
                 </div>
+                <div className="chipsCon">
+                  <div className="listBox">
+                    <ul>
+                      <li>
+                        <a href="">
+                          <div className="userCon">
+                            <img src="images/avatar.png" />
+                          </div>
+                          White Jacques                                               
+                        </a>
+                        <div className="iconCon">
+                          <i className="fa fa-times" />
+                        </div> 
+                      </li>
+                    </ul>
+                  </div>
+                </div>
                 <h5 className="subHeading">Suggested Customers</h5>
                 <div className="listBox">
                   <ul>
@@ -119,6 +162,9 @@ function Home(props) {
                           <img src="images/avatar.png" />
                         </div>
                         White Jacques
+                        <div className="iconCon">
+                          <i className="fa fa-plus" />
+                        </div>
                       </a>
                     </li>
                     <li>
@@ -127,6 +173,9 @@ function Home(props) {
                           <img src="images/avatar.png" />
                         </div>
                         White Jacques
+                        <div className="iconCon">
+                          <i className="fa fa-plus" />
+                        </div>
                       </a>
                     </li>
                     <li>
@@ -135,6 +184,9 @@ function Home(props) {
                           <img src="images/avatar.png" />
                         </div>
                         White Jacques
+                        <div className="iconCon">
+                          <i className="fa fa-plus" />
+                        </div>
                       </a>
                     </li>
                   </ul>
@@ -206,7 +258,7 @@ function Home(props) {
       <Header />
       <div className="contentContainer">
       	<div className="leftSidebar">
-      	<LeftSideBar />
+      	 <LeftSideBar />
       	</div>
       	<div className="centerContent">
       		<div className="centerBoxContainer">
@@ -220,12 +272,12 @@ function Home(props) {
       		</div>
       	</div>
       	<div className="rightSidebar">
-      		<RightSideBar />
+      		<ListSideBar />
       	</div>
       </div>
 
 
-      <Modal isOpen={true}>
+      <Modal isOpen={false}>
         <ModalBody>
           <div className="modalContent">
             <div className="modalHeader">
@@ -240,7 +292,7 @@ function Home(props) {
             {renderModalTabs()}
           </div>
         </ModalBody>
-        <ModalFooter>
+        <ModalFooter className="modalFooter">
           <Button color="secondary">Cancel</Button>{' '}
           <Button color="primary">Share</Button>
         </ModalFooter>

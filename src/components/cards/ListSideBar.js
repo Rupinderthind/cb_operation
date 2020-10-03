@@ -1,6 +1,6 @@
 import React from 'react';
 
-function RightSideBar(props) {
+function ListSideBar(props) {
   return (
     <div className="leftSidebarContent">
       <h4>Assigned Customers
@@ -60,4 +60,4 @@ function RightSideBar(props) {
   );
 }
 
-export default RightSideBar;
+export default ListSideBar;

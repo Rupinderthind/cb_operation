@@ -4,7 +4,7 @@ function ListSideBar(props) {
   return (
     <div className="leftSidebarContent">
       <h4>Assigned Customers
-        <button className="transparentBtn">
+        <button className="transparentBtn" onClick={() => props.setOpenModal && props.setOpenModal()}>
           <i className="fa fa-plus" />
         </button>
       </h4>
@@ -14,40 +14,40 @@ function ListSideBar(props) {
       </div>
       <div className="listBox">
         <ul>
-          <li>
-            <a href="">
+          <li onClick={() => props.setOpenModal && props.setOpenModal()}>
+            <a>
               <div className="userCon">
                 <img src="images/avatar.png" />
               </div>
               Jhon Due
             </a>
           </li>
-          <li>
-            <a href="">
+          <li onClick={() => props.setOpenModal && props.setOpenModal()}>
+            <a>
               <div className="userCon">
                 <img src="images/avatar.png" />
               </div>
               Jhon Due
             </a>
           </li>
-          <li>
-            <a href="">
+          <li onClick={() => props.setOpenModal && props.setOpenModal()}>
+            <a>
               <div className="userCon">
                 <img src="images/avatar.png" />
               </div>
               Jhon Due
             </a>
           </li>
-          <li>
-            <a href="">
+          <li onClick={() => props.setOpenModal && props.setOpenModal()}>
+            <a>
               <div className="userCon">
                 <img src="images/avatar.png" />
               </div>
               Jhon Due
             </a>
           </li>
-          <li>
-            <a href="">
+          <li onClick={() => props.setOpenModal && props.setOpenModal()}>
+            <a>
               <div className="userCon">
                 <img src="images/avatar.png" />
               </div>

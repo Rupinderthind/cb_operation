@@ -31,24 +31,24 @@ function LeftSideBar(props) {
       </div>
       <div className="listBox">
         <ul>
-          <li>
-            <a href="">
+          <li onClick={() => props.setOpenModal && props.setOpenModal()}>
+            <a>
               <div className="userCon">
                 <img src="images/avatar.png" />
               </div>
               White Jacques
             </a>
           </li>
-          <li>
-            <a href="">
+          <li onClick={() => props.setOpenModal && props.setOpenModal()}>
+            <a>
               <div className="userCon">
                 <img src="images/avatar.png" />
               </div>
               White Jacques
             </a>
           </li>
-          <li>
-            <a href="">
+          <li onClick={() => props.setOpenModal && props.setOpenModal()}>
+            <a>
               <div className="userCon">
                 <img src="images/avatar.png" />
               </div>

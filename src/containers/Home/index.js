@@ -13,6 +13,7 @@ const modalTabs = ['Text', 'Email', 'Social']
 function Home(props) {
   console.log(props, 'test')
   const [activeTab, setActiveTab] = useState(0)
+  const [modalActiveTab, setModalActiveTab] = useState(0)
 
   const renderTabs = () => {
     if (activeTab === 0) {
@@ -31,6 +32,175 @@ function Home(props) {
   const onChangeTab = (currentTab) => {
     setActiveTab(currentTab)
   }
+
+  const onChangeModalTab = (currentTab) => {
+    setModalActiveTab(currentTab)
+  }
+
+  const renderModalTabs = () => {
+    if (modalActiveTab === 0) {
+      return  <div className="modalDetail">
+                <h5 className="subHeading">Attach Product(s)</h5>
+                <div className="itemList">
+                  <ul>
+                    <li>
+                      <div className="itemImgBox">
+                        <img src="images/banner.jpg" />
+                      </div>
+                      <div className="itemContent">
+                        <h5>2020 JHON DEERE 6145R</h5>
+                        <p>
+                          <span>#hours</span>
+                          <span>#150</span>
+                          <span>#2020</span>
+                        </p>
+                        <h6>$139,896</h6>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <h5 className="subHeading">Suggested Customers</h5>
+                <div className="listBox">
+                  <ul>
+                    <li>
+                      <a href="">
+                        <div className="userCon">
+                          <img src="images/avatar.png" />
+                        </div>
+                        White Jacques
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <div className="userCon">
+                          <img src="images/avatar.png" />
+                        </div>
+                        White Jacques
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <div className="userCon">
+                          <img src="images/avatar.png" />
+                        </div>
+                        White Jacques
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+    } else if (modalActiveTab === 1) {
+      return  <div className="modalDetail">
+                <h5 className="subHeading">Attach Product(s)</h5>
+                <div className="itemList">
+                  <ul>
+                    <li>
+                      <div className="itemImgBox">
+                        <img src="images/banner.jpg" />
+                      </div>
+                      <div className="itemContent">
+                        <h5>2020 JHON DEERE 6145R</h5>
+                        <p>
+                          <span>#hours</span>
+                          <span>#150</span>
+                          <span>#2020</span>
+                        </p>
+                        <h6>$139,896</h6>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <h5 className="subHeading">Suggested Customers</h5>
+                <div className="listBox">
+                  <ul>
+                    <li>
+                      <a href="">
+                        <div className="userCon">
+                          <img src="images/avatar.png" />
+                        </div>
+                        White Jacques
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <div className="userCon">
+                          <img src="images/avatar.png" />
+                        </div>
+                        White Jacques
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <div className="userCon">
+                          <img src="images/avatar.png" />
+                        </div>
+                        White Jacques
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+    } else if (modalActiveTab === 2) {
+      return  <div className="modalDetail">
+                <h5 className="subHeading">Attach Product(s)</h5>
+                <div className="itemList">
+                  <ul>
+                    <li>
+                      <div className="itemImgBox">
+                        <img src="images/banner.jpg" />
+                      </div>
+                      <div className="itemContent">
+                        <h5>2020 JHON DEERE 6145R</h5>
+                        <p>
+                          <span>#hours</span>
+                          <span>#150</span>
+                          <span>#2020</span>
+                        </p>
+                        <h6>$139,896</h6>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <h5 className="subHeading">Select the channel you wanted to post</h5>
+                <div className="socialList">
+                  <ul>
+                    <li>
+                      <div className="socialIcon twitter">
+                        <i className="fab fa-twitter"></i>
+                      </div>
+                      Twitter
+                    </li>
+                    <li>
+                      <div className="socialIcon facebook">
+                        <i className="fab fa-facebook-square"></i>
+                      </div>
+                      Facebook
+                    </li>
+                    <li>
+                      <div className="socialIcon linkedin">
+                        <i className="fab fa-linkedin"></i>
+                      </div>
+                      Linkedin
+                    </li>
+                    <li>
+                      <div className="socialIcon tiktok">
+                        <i className="fab fa-tiktok"></i>
+                      </div>
+                      TikTok
+                    </li>
+                    <li>
+                      <div className="socialIcon whatsapp">
+                        <i className="fab fa-whatsapp"></i>
+                      </div>
+                      WhatsApp
+                    </li>
+                    
+                  </ul>
+                </div>
+              </div>
+    }
+  }
+
   return (
     <>
       <Header />
@@ -61,61 +231,13 @@ function Home(props) {
             <div className="modalHeader">
               <h3 className="heading">Suggested Share</h3>
               <HeadingBox 
-                activeTab={activeTab}
+                activeTab={modalActiveTab}
                 tabs={modalTabs}
                 noRightSection
+                onChangeTab={onChangeModalTab}
               />         
             </div>
-            <div className="modalDetail">
-              <h5 className="subHeading">Attach Product(s)</h5>
-              <div className="itemList">
-                <ul>
-                  <li>
-                    <div className="itemImgBox">
-                      <img src="images/banner.jpg" />
-                    </div>
-                    <div className="itemContent">
-                      <h5>2020 JHON DEERE 6145R</h5>
-                      <p>
-                        <span>#hours</span>
-                        <span>#150</span>
-                        <span>#2020</span>
-                      </p>
-                      <h6>$139,896</h6>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <h5 className="subHeading">Suggested Customers</h5>
-              <div className="listBox">
-                <ul>
-                  <li>
-                    <a href="">
-                      <div className="userCon">
-                        <img src="images/avatar.png" />
-                      </div>
-                      White Jacques
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <div className="userCon">
-                        <img src="images/avatar.png" />
-                      </div>
-                      White Jacques
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <div className="userCon">
-                        <img src="images/avatar.png" />
-                      </div>
-                      White Jacques
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            {renderModalTabs()}
           </div>
         </ModalBody>
         <ModalFooter>

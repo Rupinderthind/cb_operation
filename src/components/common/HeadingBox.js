@@ -23,7 +23,7 @@ function HeadingBox(props) {
       </div>
       {!props.noRightSection ?
         <div className="rightBar">
-          <CustomIcon icon="search" />
+          <CustomIcon icon="Search" />
         </div>
         : 
         null

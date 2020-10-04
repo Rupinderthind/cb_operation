@@ -10,7 +10,7 @@ function ListSideBar(props) {
         </button>
       </h4>
       <div className="searchBar">
-        <i><CustomIcon icon='search' /></i>
+        <i><CustomIcon icon='Search' /></i>
         <input type="text" placeholder="Search" />
       </div>
       <div className="listBox">

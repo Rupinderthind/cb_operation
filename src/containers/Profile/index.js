@@ -310,7 +310,7 @@ function Profile(props) {
                     /> 
                   </div>
                   <div className="searchTabs">
-                    <CustomIcon icon="search" />
+                    <CustomIcon icon="Search" />
                     <input type="text" className="form-control" placeholder="Search" />
                   </div>
                 </div>

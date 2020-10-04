@@ -70,7 +70,7 @@ function Profile(props) {
                     </li>
                     <li className="contentBox">
                       <div className="iconCon">
-                        <i className="fa fa-comments" />
+                        <CustomIcon icon="Icon/Chat%20Regular" />
                       </div>
                       <div className="itemImgBox">
                         <img src="images/banner.jpg" />
@@ -87,71 +87,7 @@ function Profile(props) {
                     </li>
                     <li className="contentBox">
                       <div className="iconCon">
-                        <i className="fa fa-envelope" />
-                      </div>
-                      <div className="itemImgBox">
-                        <img src="images/banner.jpg" />
-                      </div>
-                      <div className="itemContent">
-                        <h5>2020 JHON DEERE 6145R</h5>
-                        <p>
-                          <span>#hours</span>
-                          <span>#150</span>
-                          <span>#2020</span>
-                        </p>
-                        <h6>$139,896</h6>
-                      </div>
-                    </li>
-                    <li className="align-center">
-                      <div className="dateCon">
-                        Thursday, August 24th
-                      </div>
-                    </li>
-                    <li>
-                      <div className="userCard">
-                        <div className="userCon">
-                          <CustomIcon icon="Placeholder/Person/Small" />
-                        </div>
-                        White Jacques
-                      </div>
-                    </li>
-                    <li className="contentBox">
-                      <div className="iconCon">
-                        <i className="fa fa-envelope" />
-                      </div>
-                      <div className="itemImgBox">
-                        <img src="images/banner.jpg" />
-                      </div>
-                      <div className="itemContent">
-                        <h5>2020 JHON DEERE 6145R</h5>
-                        <p>
-                          <span>#hours</span>
-                          <span>#150</span>
-                          <span>#2020</span>
-                        </p>
-                        <h6>$139,896</h6>
-                      </div>
-                    </li>
-                    <li className="contentBox">
-                      <div className="iconCon">
-                        <i className="fa fa-comments" />
-                      </div>
-                      <div className="itemImgBox">
-                        <img src="images/banner.jpg" />
-                      </div>
-                      <div className="itemContent">
-                        <h5>2020 JHON DEERE 6145R</h5>
-                        <p>
-                          <span>#hours</span>
-                          <span>#150</span>
-                          <span>#2020</span>
-                        </p>
-                        <h6>$139,896</h6>
-                      </div>
-                    </li>
-                    <li className="contentBox">
-                      <div className="iconCon">
-                        <i className="fa fa-envelope" />
+                        <CustomIcon icon="Icon/Email" />
                       </div>
                       <div className="itemImgBox">
                         <img src="images/banner.jpg" />
@@ -181,7 +117,7 @@ function Profile(props) {
                     </li>
                     <li className="contentBox">
                       <div className="iconCon">
-                        <i className="fa fa-envelope" />
+                        <CustomIcon icon="Icon/Email" />
                       </div>
                       <div className="itemImgBox">
                         <img src="images/banner.jpg" />
@@ -198,7 +134,7 @@ function Profile(props) {
                     </li>
                     <li className="contentBox">
                       <div className="iconCon">
-                        <i className="fa fa-comments" />
+                        <CustomIcon icon="Icon/Chat%20Regular" />
                       </div>
                       <div className="itemImgBox">
                         <img src="images/banner.jpg" />
@@ -215,7 +151,71 @@ function Profile(props) {
                     </li>
                     <li className="contentBox">
                       <div className="iconCon">
-                        <i className="fa fa-envelope" />
+                        <CustomIcon icon="Icon/Email" />
+                      </div>
+                      <div className="itemImgBox">
+                        <img src="images/banner.jpg" />
+                      </div>
+                      <div className="itemContent">
+                        <h5>2020 JHON DEERE 6145R</h5>
+                        <p>
+                          <span>#hours</span>
+                          <span>#150</span>
+                          <span>#2020</span>
+                        </p>
+                        <h6>$139,896</h6>
+                      </div>
+                    </li>
+                    <li className="align-center">
+                      <div className="dateCon">
+                        Thursday, August 24th
+                      </div>
+                    </li>
+                    <li>
+                      <div className="userCard">
+                        <div className="userCon">
+                          <CustomIcon icon="Placeholder/Person/Small" />
+                        </div>
+                        White Jacques
+                      </div>
+                    </li>
+                    <li className="contentBox">
+                      <div className="iconCon">
+                        <CustomIcon icon="Icon/Email" />
+                      </div>
+                      <div className="itemImgBox">
+                        <img src="images/banner.jpg" />
+                      </div>
+                      <div className="itemContent">
+                        <h5>2020 JHON DEERE 6145R</h5>
+                        <p>
+                          <span>#hours</span>
+                          <span>#150</span>
+                          <span>#2020</span>
+                        </p>
+                        <h6>$139,896</h6>
+                      </div>
+                    </li>
+                    <li className="contentBox">
+                      <div className="iconCon">
+                        <CustomIcon icon="Icon/Chat%20Regular" />
+                      </div>
+                      <div className="itemImgBox">
+                        <img src="images/banner.jpg" />
+                      </div>
+                      <div className="itemContent">
+                        <h5>2020 JHON DEERE 6145R</h5>
+                        <p>
+                          <span>#hours</span>
+                          <span>#150</span>
+                          <span>#2020</span>
+                        </p>
+                        <h6>$139,896</h6>
+                      </div>
+                    </li>
+                    <li className="contentBox">
+                      <div className="iconCon">
+                        <CustomIcon icon="Icon/Email" />
                       </div>
                       <div className="itemImgBox">
                         <img src="images/banner.jpg" />

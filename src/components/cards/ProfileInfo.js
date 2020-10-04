@@ -15,12 +15,12 @@ function ProfileInfo(props) {
       <ul className="userActions">
         <li>
           <a href="">
-            <i className="fa fa-phone-alt" />
+            <CustomIcon icon="Icon/Phone" />
           </a>
         </li>
         <li>
           <a href="">
-            <i className="fa fa-envelope" />
+            <CustomIcon icon="Icon/Email" />
           </a>
         </li>
       </ul>
@@ -37,12 +37,12 @@ function ProfileInfo(props) {
             <ul className="userActions">
               <li>
                 <a href="">
-                  <i className="fa fa-comments" />
+                  <CustomIcon icon="Icon/Chat%20Regular" />
                 </a>
               </li>
               <li>
                 <a href="">
-                  <i className="fa fa-envelope" />
+                  <CustomIcon icon="Icon/Email" />
                 </a>
               </li>
             </ul>

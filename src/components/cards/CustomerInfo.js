@@ -17,12 +17,12 @@ function CustomerInfo(props) {
       <ul className="userActions">
         <li>
           <a href="">
-            <i className="fa fa-comments" />
+            <CustomIcon icon="Icon/Chat%20Regular" />
           </a>
         </li>
         <li>
           <a href="">
-            <i className="fa fa-envelope" />
+            <CustomIcon icon="Icon/Email" />
           </a>
         </li>
       </ul>

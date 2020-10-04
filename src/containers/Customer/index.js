@@ -5,9 +5,14 @@ import ItemCard from '../../components/cards/ItemCard'
 import LeftSideBar from '../../components/cards/LeftSideBar'
 import ListSideBar from '../../components/cards/ListSideBar'
 import TableContent from '../../components/common/TableContent'
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Row, Col } from 'reactstrap';
 import CustomerInfo from '../../components/cards/CustomerInfo'
 import { Tooltip } from 'reactstrap';
+import TextField from '@material-ui/core/TextField';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
 
 const userTabs = ['M', 'Q', 'Y']
 const modalTabs = ['Text', 'Email', 'Social']
@@ -18,6 +23,7 @@ function Customer(props) {
   const [activeTab, setActiveTab] = useState(0)
   const [modalActiveTab, setModalActiveTab] = useState(0)
   const [tooltipOpen, setTooltipOpen] = useState(false);
+  const [openModal, setOpenModal] = useState(false)
 
   const toggle = () => setTooltipOpen(!tooltipOpen);
 
@@ -241,7 +247,7 @@ function Customer(props) {
       <Header />
       <div className="contentContainer">
       	<div className="leftSidebar">
-      	 <ListSideBar />
+      	 <ListSideBar setOpenModal={() => setOpenModal(true)} />
       	</div>
       	<div className="centerContent bigArea">
       		<div className="centerBoxContainer">
@@ -325,6 +331,118 @@ function Customer(props) {
             </div>
       		</div>
       	</div>
+
+        <Modal isOpen={openModal} toggle={() => setOpenModal(false)}>
+          <ModalBody className="customModal">
+            <div className="modalContent">
+              <div className="modalHeader">
+                <h3 className="heading">Customer Details</h3>         
+              </div>
+              <div className="formConatiner">
+                <Row>
+                  <Col md={6}>
+                    <TextField label="First Name" variant="outlined" className="formElement" size="small" />
+                  </Col>
+                  <Col md={6}>
+                    <TextField label="First Name" variant="outlined" className="formElement" size="small" />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col md={12}>
+                    <TextField label="Bussiness Name" variant="outlined" className="formElement" size="small" />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col md={12}>
+                    <TextField label="Email Address" variant="outlined" className="formElement" size="small" />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col md={3}>
+                    <FormControl variant="outlined" className="formElement" size="small">
+                      {/*<InputLabel>Country</InputLabel>*/}
+                      <Select
+                        label="Country"
+                      >
+                        <MenuItem value="">
+                          <em>None</em>
+                        </MenuItem>
+                        <MenuItem value={10}>Ten</MenuItem>
+                        <MenuItem value={20}>Twenty</MenuItem>
+                        <MenuItem value={30}>Thirty</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </Col>
+                  <Col md={9}>
+                    <TextField label="Phone No" variant="outlined" className="formElement" size="small" />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col md={6}>
+                    <FormControl variant="outlined" className="formElement" size="small">
+                      <InputLabel>Country</InputLabel>
+                      <Select
+                        label="Country"
+                      >
+                        <MenuItem value="">
+                          <em>None</em>
+                        </MenuItem>
+                        <MenuItem value={10}>Ten</MenuItem>
+                        <MenuItem value={20}>Twenty</MenuItem>
+                        <MenuItem value={30}>Thirty</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </Col>
+                  <Col md={6}>
+                    <FormControl variant="outlined" className="formElement" size="small">
+                      <InputLabel>State</InputLabel>
+                      <Select
+                        label="State"
+                      >
+                        <MenuItem value="">
+                          <em>None</em>
+                        </MenuItem>
+                        <MenuItem value={10}>Ten</MenuItem>
+                        <MenuItem value={20}>Twenty</MenuItem>
+                        <MenuItem value={30}>Thirty</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col md={6}>
+                    <FormControl variant="outlined" className="formElement" size="small">
+                      <InputLabel>City</InputLabel>
+                      <Select
+                        label="City"
+                      >
+                        <MenuItem value="">
+                          <em>None</em>
+                        </MenuItem>
+                        <MenuItem value={10}>Ten</MenuItem>
+                        <MenuItem value={20}>Twenty</MenuItem>
+                        <MenuItem value={30}>Thirty</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </Col>
+                  <Col md={6}>
+                    <TextField label="Zip Code" variant="outlined" className="formElement" size="small" />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col md={12}>
+                    <TextField label="Address Line" variant="outlined" className="formElement" size="small" />
+                  </Col>
+                </Row>
+              </div>
+            </div>
+          </ModalBody>
+          <ModalFooter className="modalFooter">
+            <Button color="secondary">Cancel</Button>{' '}
+            <Button color="primary">Save</Button>
+          </ModalFooter>
+        </Modal>
+
       </div>
 
       

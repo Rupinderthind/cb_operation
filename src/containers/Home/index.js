@@ -14,6 +14,7 @@ function Home(props) {
   console.log(props, 'test')
   const [activeTab, setActiveTab] = useState(0)
   const [modalActiveTab, setModalActiveTab] = useState(0)
+  const [openModal, setOpenModal] = useState(false)
 
   const renderTabs = () => {
     if (activeTab === 0) {
@@ -258,7 +259,7 @@ function Home(props) {
       <Header />
       <div className="contentContainer">
       	<div className="leftSidebar">
-      	 <LeftSideBar />
+      	 <LeftSideBar setOpenModal={() => setOpenModal(true)} />
       	</div>
       	<div className="centerContent">
       		<div className="centerBoxContainer">
@@ -277,7 +278,7 @@ function Home(props) {
       </div>
 
 
-      <Modal isOpen={false}>
+      <Modal isOpen={openModal} toggle={() => setOpenModal(false)}>
         <ModalBody>
           <div className="modalContent">
             <div className="modalHeader">

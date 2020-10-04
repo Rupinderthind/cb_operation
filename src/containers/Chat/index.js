@@ -3,7 +3,7 @@ import Header from '../../components/common/Header'
 import HeadingBox from '../../components/common/HeadingBox'
 import ItemCard from '../../components/cards/ItemCard'
 import ChatList from '../../components/cards/ChatList'
-import ListSideBar from '../../components/cards/ListSideBar'
+import CustomerDetail from '../../components/cards/CustomerDetail'
 import TableContent from '../../components/common/TableContent'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
@@ -28,7 +28,7 @@ const Chat = () => {
       		</div>
       	</div>
       	<div className="rightSidebar">
-      		<ListSideBar />
+      		<CustomerDetail />
       	</div>
       </div>
     </>

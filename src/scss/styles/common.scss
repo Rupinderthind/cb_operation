@@ -561,6 +561,13 @@ html, body, #root{
 			padding: 10px 0px;
 			margin: 0;
 		}
+		.itemList {
+			ul {
+				li{
+					margin-bottom: 0;
+				}
+			}
+		}
 		.chipsCon{
 			border: solid 1px #CED2D9;
 			margin: 10px 0px;

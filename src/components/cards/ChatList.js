@@ -4,7 +4,7 @@ import CustomIcon from '../common/CustomIcon'
 
 const userTabs = ['Customers', 'Team']
 
-const ChatList = () => {
+const ChatList = (props) => {
 
 	const [activeTab, setActiveTab] = useState(0)
 
@@ -133,7 +133,7 @@ const ChatList = () => {
 	return (
 		<div className="leftSidebarContent chatList">
       <h4>Chat
-        <button className="transparentBtn">
+        <button className="transparentBtn" onClick={() => props.openModal()}>
           <CustomIcon icon="Edit/Stroke" />
         </button>
       </h4>

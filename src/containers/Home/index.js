@@ -6,6 +6,7 @@ import LeftSideBar from '../../components/cards/LeftSideBar'
 import ListSideBar from '../../components/cards/ListSideBar'
 import TableContent from '../../components/common/TableContent'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import CustomIcon from '../../components/common/CustomIcon'
 
 const tabs = ['Avaiable', 'Sold']
 const modalTabs = ['Text', 'Email', 'Social']
@@ -66,7 +67,7 @@ function Home(props) {
                       <li>
                         <a href="">
                           <div className="userCon">
-                            <img src="images/avatar.png" />
+                            <CustomIcon icon="Placeholder/Person/Small" />
                           </div>
                           White Jacques                                               
                         </a>
@@ -83,33 +84,33 @@ function Home(props) {
                     <li>
                       <a href="">
                         <div className="userCon">
-                          <img src="images/avatar.png" />
+                          <CustomIcon icon="Placeholder/Person/Small" />
                         </div>
                         White Jacques
                         <div className="iconCon">
-                          <i className="fa fa-plus" />
+                          <CustomIcon icon="Header/Icon/Add" />
                         </div>
                       </a>
                     </li>
                     <li>
                       <a href="">
                         <div className="userCon">
-                          <img src="images/avatar.png" />
+                          <CustomIcon icon="Placeholder/Person/Small" />
                         </div>
                         White Jacques
                         <div className="iconCon">
-                          <i className="fa fa-plus" />
+                          <CustomIcon icon="Header/Icon/Add" />
                         </div>
                       </a>
                     </li>
                     <li>
                       <a href="">
                         <div className="userCon">
-                          <img src="images/avatar.png" />
+                          <CustomIcon icon="Placeholder/Person/Small" />
                         </div>
                         White Jacques
                         <div className="iconCon">
-                          <i className="fa fa-plus" />
+                          <CustomIcon icon="Header/Icon/Add" />
                         </div>
                       </a>
                     </li>
@@ -143,7 +144,7 @@ function Home(props) {
                       <li>
                         <a href="">
                           <div className="userCon">
-                            <img src="images/avatar.png" />
+                            <CustomIcon icon="Placeholder/Person/Small" />
                           </div>
                           White Jacques                                               
                         </a>
@@ -160,33 +161,33 @@ function Home(props) {
                     <li>
                       <a href="">
                         <div className="userCon">
-                          <img src="images/avatar.png" />
+                          <CustomIcon icon="Placeholder/Person/Small" />
                         </div>
                         White Jacques
                         <div className="iconCon">
-                          <i className="fa fa-plus" />
+                          <CustomIcon icon="Header/Icon/Add" />
                         </div>
                       </a>
                     </li>
                     <li>
                       <a href="">
                         <div className="userCon">
-                          <img src="images/avatar.png" />
+                          <CustomIcon icon="Placeholder/Person/Small" />
                         </div>
                         White Jacques
                         <div className="iconCon">
-                          <i className="fa fa-plus" />
+                          <CustomIcon icon="Header/Icon/Add" />
                         </div>
                       </a>
                     </li>
                     <li>
                       <a href="">
                         <div className="userCon">
-                          <img src="images/avatar.png" />
+                          <CustomIcon icon="Placeholder/Person/Small" />
                         </div>
                         White Jacques
                         <div className="iconCon">
-                          <i className="fa fa-plus" />
+                          <CustomIcon icon="Header/Icon/Add" />
                         </div>
                       </a>
                     </li>

@@ -1,4 +1,5 @@
 import React from 'react';
+import CustomIcon from '../common/CustomIcon'
 
 function CustomerInfo(props) {
   return (
@@ -8,7 +9,7 @@ function CustomerInfo(props) {
       </div>
       <h4>
         Christopher Pawelski
-        <i className="fa fa-pencil-alt" />
+        <CustomIcon icon="Edit/Stroke" />
       </h4>
       <p>Chris Farming</p>
       <p>Country RD 25, Windom, MN</p>

@@ -1,4 +1,5 @@
 import React from 'react';
+import CustomIcon from './CustomIcon'
 
 function Header(props) {
   console.log(props, 'test')
@@ -23,23 +24,23 @@ function Header(props) {
       	<ul className="iconList">
       		<li>
       			<a href="">
-      				<i className="fa fa-users" />
+            <CustomIcon icon="Navigation/Customers/Regular" />
       			</a>
       		</li>
       		<li>
       			<a href="">
-      				<i className="fa fa-bell" />
+              <CustomIcon icon="Navigation/Notifications/Regular" />
       			</a>
       		</li>
       		<li>
       			<a href="">
-      				<i className="fa fa-comment" />
+              <CustomIcon icon="Navigation/Chat/Regular" />
               <span className="badge">2</span>
       			</a>
       		</li>
       		<li>
       			<a href="" className="defaultBG">
-      				<i className="fa fa-user" />
+              <CustomIcon icon="Placeholder/Person/Regular" />
       			</a>
       		</li>
       	</ul>

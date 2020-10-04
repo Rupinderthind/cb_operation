@@ -1,4 +1,5 @@
 import React from 'react';
+import CustomIcon from './CustomIcon'
 
 function HeadingBox(props) {
   return (
@@ -22,7 +23,7 @@ function HeadingBox(props) {
       </div>
       {!props.noRightSection ?
         <div className="rightBar">
-          <i className="fa fa-search" />
+          <CustomIcon icon="search" />
         </div>
         : 
         null

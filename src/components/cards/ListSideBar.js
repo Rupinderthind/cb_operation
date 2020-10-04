@@ -1,15 +1,16 @@
 import React from 'react';
+import CustomIcon from '../common/CustomIcon'
 
 function ListSideBar(props) {
   return (
     <div className="leftSidebarContent">
       <h4>Assigned Customers
         <button className="transparentBtn" onClick={() => props.setOpenModal && props.setOpenModal()}>
-          <i className="fa fa-plus" />
+          <CustomIcon icon="Header/Icon/Add" />
         </button>
       </h4>
       <div className="searchBar">
-        <i className="fa fa-search" />
+        <i><CustomIcon icon='search' /></i>
         <input type="text" placeholder="Search" />
       </div>
       <div className="listBox">
@@ -17,7 +18,7 @@ function ListSideBar(props) {
           <li onClick={() => props.setOpenModal && props.setOpenModal()}>
             <a>
               <div className="userCon">
-                <img src="images/avatar.png" />
+                <CustomIcon icon="Placeholder/Person/Small" />
               </div>
               Jhon Due
             </a>
@@ -25,7 +26,7 @@ function ListSideBar(props) {
           <li onClick={() => props.setOpenModal && props.setOpenModal()}>
             <a>
               <div className="userCon">
-                <img src="images/avatar.png" />
+                <CustomIcon icon="Placeholder/Person/Small" />
               </div>
               Jhon Due
             </a>
@@ -33,7 +34,7 @@ function ListSideBar(props) {
           <li onClick={() => props.setOpenModal && props.setOpenModal()}>
             <a>
               <div className="userCon">
-                <img src="images/avatar.png" />
+                <CustomIcon icon="Placeholder/Person/Small" />
               </div>
               Jhon Due
             </a>
@@ -41,7 +42,7 @@ function ListSideBar(props) {
           <li onClick={() => props.setOpenModal && props.setOpenModal()}>
             <a>
               <div className="userCon">
-                <img src="images/avatar.png" />
+                <CustomIcon icon="Placeholder/Person/Small" />
               </div>
               Jhon Due
             </a>
@@ -49,7 +50,7 @@ function ListSideBar(props) {
           <li onClick={() => props.setOpenModal && props.setOpenModal()}>
             <a>
               <div className="userCon">
-                <img src="images/avatar.png" />
+                <CustomIcon icon="Placeholder/Person/Small" />
               </div>
               Jhon Due
             </a>

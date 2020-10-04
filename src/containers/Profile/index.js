@@ -8,6 +8,7 @@ import TableContent from '../../components/common/TableContent'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import ProfileInfo from '../../components/cards/ProfileInfo'
 import { Tooltip } from 'reactstrap';
+import CustomIcon from '../../components/common/CustomIcon'
 
 const userTabs = ['M', 'Q', 'Y']
 const modalTabs = ['Text', 'Email', 'Social']
@@ -42,15 +43,14 @@ function Profile(props) {
                     <li>
                       <div className="userCard">
                         <div className="userCon">
-                          <img src="images/avatar.png" />
+                          <CustomIcon icon="Placeholder/Person/Small" />
                         </div>
                         White Jacques
                       </div>
                     </li>
                     <li className="contentBox">
                       <div className="iconCon" id="TooltipExample">
-                        <i className="fa fa-info-circle"></i>
-
+                        <CustomIcon icon="Dropdown/List/Oneline/List/Single%20line/Icon/Info" />
                       </div>
                       <Tooltip placement="right" isOpen={tooltipOpen} target="TooltipExample" toggle={toggle}>
                         Service due on 06/09/2020
@@ -110,7 +110,7 @@ function Profile(props) {
                     <li>
                       <div className="userCard">
                         <div className="userCon">
-                          <img src="images/avatar.png" />
+                          <CustomIcon icon="Placeholder/Person/Small" />
                         </div>
                         White Jacques
                       </div>
@@ -174,7 +174,7 @@ function Profile(props) {
                     <li>
                       <div className="userCard">
                         <div className="userCon">
-                          <img src="images/avatar.png" />
+                          <CustomIcon icon="Placeholder/Person/Small" />
                         </div>
                         White Jacques
                       </div>
@@ -310,7 +310,7 @@ function Profile(props) {
                     /> 
                   </div>
                   <div className="searchTabs">
-                    <i className="fa fa-search" />
+                    <CustomIcon icon="search" />
                     <input type="text" className="form-control" placeholder="Search" />
                   </div>
                 </div>

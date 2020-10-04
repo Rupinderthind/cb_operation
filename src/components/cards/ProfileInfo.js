@@ -1,4 +1,5 @@
 import React from 'react';
+import CustomIcon from '../common/CustomIcon'
 
 function ProfileInfo(props) {
   return (
@@ -8,7 +9,7 @@ function ProfileInfo(props) {
       </div>
       <h4>
         Chad Rembold
-        <i className="fa fa-pencil-alt" />
+        <CustomIcon icon="Edit/Stroke" />
       </h4>
       <p>Sales Rep.</p>
       <ul className="userActions">
@@ -27,6 +28,7 @@ function ProfileInfo(props) {
         <p>Reporting to</p>
         <div className="userCard">
           <div className="userCon">
+            <CustomIcon icon="Placeholder/Person/Small" />
             <img src="images/avatar.png" />
           </div>
           <div className="userContent">

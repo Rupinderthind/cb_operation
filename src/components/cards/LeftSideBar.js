@@ -1,4 +1,5 @@
 import React from 'react';
+import CustomIcon from '../common/CustomIcon'
 
 function LeftSideBar(props) {
   return (
@@ -34,7 +35,7 @@ function LeftSideBar(props) {
           <li onClick={() => props.setOpenModal && props.setOpenModal()}>
             <a>
               <div className="userCon">
-                <img src="images/avatar.png" />
+                <CustomIcon icon="Placeholder/Person/Small" />
               </div>
               White Jacques
             </a>
@@ -42,7 +43,7 @@ function LeftSideBar(props) {
           <li onClick={() => props.setOpenModal && props.setOpenModal()}>
             <a>
               <div className="userCon">
-                <img src="images/avatar.png" />
+                <CustomIcon icon="Placeholder/Person/Small" />
               </div>
               White Jacques
             </a>
@@ -50,7 +51,7 @@ function LeftSideBar(props) {
           <li onClick={() => props.setOpenModal && props.setOpenModal()}>
             <a>
               <div className="userCon">
-                <img src="images/avatar.png" />
+                <CustomIcon icon="Placeholder/Person/Small" />
               </div>
               White Jacques
             </a>

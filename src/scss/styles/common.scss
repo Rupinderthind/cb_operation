@@ -11,7 +11,7 @@ html, body, #root{
 .header{
 	display: flex;
 	flex-direction: row;
-	padding: 10px 15px;
+	padding: 5px 15px;
 	background: #fff;
 	border-top: solid 8px #3C7A30;
 	margin-bottom: 10px;
@@ -79,8 +79,8 @@ html, body, #root{
 	    border-radius: 50%;
 	    font-size: 18px;
 	    transition: all linear 0.2s 0s;
-	    width: 42px;
-	    height: 42px;
+	    width: 30px;
+	    height: 30px;
 	    text-align: center;
 	    position: relative;
 	    vertical-align: middle;
@@ -97,11 +97,11 @@ html, body, #root{
 			}
 			.badge {
 				position: absolute;
-		    width: 20px;
-		    height: 20px;
+		    width: 15px;
+		    height: 15px;
 		    background: red;
 		    color: #fff;
-		    font-size: 14px;
+		    font-size: 10px;
 		    border-radius: 50%;
 		    top: -5px;
 		    right: -5px;
@@ -117,17 +117,17 @@ html, body, #root{
 	height: 100%;
 	.leftSidebar{
 		display: flex;
-		width: 350px;
+		width: 375px;
 		padding: 0 15px;
 	}
 	.rightSidebar {
 		display: flex;
-		width: 350px;
+		width: 375px;
 		padding: 0 15px;
 	}
 	.centerContent{
 		display: flex;
-		width: calc(100% - 700px);
+		width: calc(100% - 750px);
 		padding: 0 15px;
 		flex-direction: column;
 		align-items: center;
@@ -162,7 +162,7 @@ html, body, #root{
 	display: flex;
 	flex-direction: row;
 	background: #fff;
-	padding: 5px 20px;
+	padding: 10px 20px;
 	border-radius: 10px;
 	width: 100%;
 	margin-bottom: 10px;
@@ -173,6 +173,7 @@ html, body, #root{
 		h5 {
 			font-size: 16px;
 			margin: 0;
+			font-weight: 700;
 		}
 	}
 	.centerBar {
@@ -183,7 +184,7 @@ html, body, #root{
 		ul{
 			list-style: none;
 			background: #f2f3f5;
-			padding: 4px;
+			padding: 2px;
 			border-radius: 4px;
 			margin: 0;
 			li{
@@ -191,7 +192,7 @@ html, body, #root{
 				cursor: pointer;
 				font-size: 13px;
 				font-weight: 700;
-				padding: 10px;
+				padding: 5.5px 10px;
 				border-radius: 4px;
 				&.active{
 					background: #fff
@@ -204,6 +205,9 @@ html, body, #root{
 		width: 50px;
 		align-items: center;
 		justify-content: flex-end;
+		img {
+			margin-top: 1px;
+		}
 	}
 }
 
@@ -288,7 +292,7 @@ html, body, #root{
 			overflow: hidden;
 			position: absolute;
 			left: 10px;
-			top: 8px;
+			top: 10px;
 			background: #ccc;
 			border: solid 1px #ccc;
 			img {
@@ -316,8 +320,8 @@ html, body, #root{
 		margin: 15px 0;
 		i{
 			position: absolute;
-			top: 8px;
-			left: 10px;
+			top: 0px;
+			left: 2px;
 			color: #737a85;
 			font-size: 14px;
 		}
@@ -346,12 +350,12 @@ html, body, #root{
 				a{
 					display: block;
 			    font-size: 13px;
-			    font-weight: 700;
+			    font-weight: 500;
 			    text-decoration: none;
 			    overflow: auto;
 			    margin-bottom: 5px;
 			    padding: 10px 5px;
-			    line-height: 30px;
+			    line-height: 20px;
 			    border-radius: 5px;
 			    color: #111;
 			    transition: all linear 0.2s 0s;
@@ -360,8 +364,8 @@ html, body, #root{
 			    }
 				}
 				.userCon{
-					width: 30px;
-					height: 30px;
+					width: 20px;
+					height: 20px;
 					border-radius: 50%;
 					overflow: hidden;
 					float: left;
@@ -376,12 +380,12 @@ html, body, #root{
 }
 
 .userCard{
-	line-height: 30px;
+	line-height: 20px;
 	font-size: 13px;
 	font-weight: 500;
 	.userCon{
-		width: 30px;
-		height: 30px;
+		width: 20px;
+		height: 20px;
 		border-radius: 50%;
 		overflow: hidden;
 		float: left;
@@ -407,7 +411,7 @@ html, body, #root{
 		li{
 			overflow: auto;
 			position: relative;
-			margin-bottom: 10px;
+			margin-bottom: 15px;
 			&.align-center{
 				text-align: center;
 			}
@@ -697,6 +701,7 @@ html, body, #root{
 			width: 100%;
 			.headingBox{
 				padding: 0;
+				margin-bottom: 20px;
 				.leftBar{
 					h5{
 						font-size: 20px;
@@ -708,7 +713,7 @@ html, body, #root{
 					justify-content: flex-end;
 					ul {
 						li{
-							padding: 4px 8px
+							padding: 5.5px 8px
 						}
 					}
 				}
@@ -733,6 +738,10 @@ html, body, #root{
 		margin-top: 10px;
 		.userCard{
 			margin-top: 10px;
+			.userCon{
+				width: 30px;
+				height: 30px;
+			}
 			.userContent{
 				float: left;
 				width: calc(100% - 40px);
@@ -752,6 +761,12 @@ html, body, #root{
 	h4{
 		font-size: 14px;
 		font-weight: 700;
+		img {
+			display: inline-block !important;
+			margin-left: 5px;
+			position: relative;
+			top: -2px
+		}
 		i{
 			cursor: pointer;
 			margin-left: 5px;
@@ -809,7 +824,7 @@ html, body, #root{
 			width: 100%;
 			border-top: solid 2px #FFC44D;
 			position: relative;
-			padding-top: 35px;
+			padding-top: 30px;
 			background: url("/images/linePattern.png") no-repeat right bottom;
 			h4{
 				font-size: 12px;
@@ -918,7 +933,7 @@ html, body, #root{
 				align-items: flex-start;
 				ul {
 					li {
-						padding: 4px 10px;
+						padding: 5.5px 10px;
 					}
 				}
 			}
@@ -928,10 +943,10 @@ html, body, #root{
 		display: flex;
 		width: 190px;
 		position: relative;
-		i{
+		>img{
 			position: absolute;
-			top: 10px;
-			left: 10px;
+			top: 2px;
+			left: 1px;
 			font-size: 15px;
 			color: #707580;
 		}
@@ -1065,3 +1080,19 @@ html, body, #root{
 		}
 	}
 }
+
+.formElement{
+	.MuiInputLabel-outlined{
+		font-size: 13px;
+	}	
+	.MuiOutlinedInput-input{
+		height: 15px;
+	}
+	.MuiOutlinedInput-notchedOutline{
+		height: 40px;
+	}
+	.MuiSelect-iconOutlined{
+		top: 6px;
+	}
+}
+

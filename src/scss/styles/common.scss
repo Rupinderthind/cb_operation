@@ -2,6 +2,7 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	font-family: 'Inter', sans-serif;
 }
 html, body, #root{
 	height: 100%;
@@ -277,23 +278,24 @@ html, body, #root{
 		position: relative;
 		input[type="text"] {
 			border: none;
-			padding: 15px 10px;
+			padding: 13px 10px;
 			padding-left: 50px;
 			width: 100%;
 			transition: all linear 0.2s 0s;
 			outline: none;
+			font-size: 12px;
 			&:focus{
 				box-shadow: 0 0 20px #e8e5e5;
 			}
 		}
 		.imgCon {
-			width: 30px;
-			height: 30px;
+			width: 24px;
+			height: 24px;
 			border-radius: 50%;
 			overflow: hidden;
 			position: absolute;
 			left: 10px;
-			top: 10px;
+			top: 8px;
 			background: #ccc;
 			border: solid 1px #ccc;
 			img {
@@ -1168,6 +1170,7 @@ html, body, #root{
 .customerDetail {
 	h4{
 		font-weight: 700;
+		margin-bottom: 20px;
 	}
 	.transparentBtn{
 		font-size: 16px;
@@ -1227,9 +1230,30 @@ html, body, #root{
 	.chatHeader{
 		padding: 15px 20px;
 		box-shadow: inset 0px -0.5px 0px #DADEE5;
+		position: relative;
 		.userCard{
 			font-size: 16px;
 			font-weight: 700;
+		}
+		.sendBtn{
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			border-radius: 50%;
+			background: none;
+			border: none;
+			top: 13px;
+			right: 15px;
+			transition: all linear 0.2s 0s;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			&.attach{
+				right: 50px;
+			}
+			&:hover{
+				background: #E4E6EB;
+			}
 		}
 	}
 	.chatBody{
@@ -1322,5 +1346,117 @@ html, body, #root{
 				background: #E4E6EB;
 			}
 		}
+	}
+}
+
+.arrowsCon{
+	display: none;
+}
+.crossSection{
+	display: none;
+}
+
+
+
+@media (max-width: 1400px){
+	.contentContainer {
+		.leftSidebar{
+			width: 275px;
+		}
+		.rightSidebar{
+			width: 275px;
+		}
+		.centerContent{
+			width: calc(100% - 550px;)
+		}
+	}
+}
+
+@media (max-width: 1024px){
+	.contentContainer {
+		.leftSidebar{
+			/*display: none;*/
+			position: absolute;
+	    z-index: 100000000;
+	    width: 100%;
+	    background: #fff;
+	    height: 100%;
+	    overflow: auto;
+	    top: 0;
+	    padding: 15px;
+	    left: -100%;
+	    transition: left linear 0.2s 0s;
+	    &.open{
+	    	left: 0;
+	    }
+		}
+		.rightSidebar{
+			/*display: none;*/
+			position: fixed;
+	    z-index: 100000000;
+	    width: 100%;
+	    background: #fff;
+	    height: 100%;
+	    overflow: auto;
+	    top: 0;
+	    padding: 15px;
+	    right: -100%;
+	    transition: right linear 0.2s 0s;
+	    &.open{
+	    	right: 0;
+	    }
+		}
+		.centerContent{
+			width: 100%;
+		}
+	}
+	.header {
+		.leftSide {
+			.logoLink{
+				width: 54px;
+				overflow: hidden;
+			}
+		}
+	}
+	.header {
+		.centerSide {
+			ul {
+				li{
+					padding: 0 5px;
+				}
+			}
+		}
+	}
+	.iconList {
+		li{
+			margin: 0 3px;
+		}
+	}
+	.arrowsCon{
+		display: block;
+	}
+	.arrowBtn{
+		position: fixed;
+    top: calc(50% - 30px);
+    background: #fff;
+    width: 40px;
+    height: 60px;
+    border: none;
+    left: 0;
+    box-shadow: 0 0 10px #e1dfdf;
+    z-index: 100;
+    opacity: 0.5;
+		&.right{
+			left: auto;
+			right: 0;
+		}
+	}
+	.crossSection{
+		display: block;
+		text-align: right;
+    margin-bottom: 13px;
+    font-size: 20px;
+    color: #9f9c9c;
+    padding: 0 5px;
 	}
 }

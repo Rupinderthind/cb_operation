@@ -1,12 +1,16 @@
 import React, {useState} from 'react';
-import TextField from '@material-ui/core/TextField';	
+import TextField from '@material-ui/core/TextField';
+import CustomIcon from '../common/CustomIcon'	
 
-const CustomerDetail = () => {
+const CustomerDetail = (props) => {
 	return (
 		<div className="leftSidebarContent customerDetail">
+      <div className="crossSection">
+        <i className="fa fa-times" onClick={() => props.openBar(null)}></i>
+      </div>
       <h4>Customer Details
         <button className="transparentBtn">
-          <i className="fa fa-ellipsis-v" />
+          <CustomIcon icon="Header/Icon/More" />
         </button>
       </h4>
       <TextField label="Business Name" variant="outlined" className="formElement" size="small" />

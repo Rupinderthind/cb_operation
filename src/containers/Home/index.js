@@ -7,6 +7,7 @@ import ListSideBar from '../../components/cards/ListSideBar'
 import TableContent from '../../components/common/TableContent'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import CustomIcon from '../../components/common/CustomIcon'
+import NavigationArrow from '../../components/common/NavigationArrow'
 
 const tabs = ['Avaiable', 'Sold']
 const modalTabs = ['Text', 'Email', 'Social']
@@ -16,6 +17,7 @@ function Home(props) {
   const [activeTab, setActiveTab] = useState(0)
   const [modalActiveTab, setModalActiveTab] = useState(0)
   const [openModal, setOpenModal] = useState(false)
+  const [barType, setBarType] = useState(null)
 
   const renderTabs = () => {
     if (activeTab === 0) {
@@ -255,12 +257,23 @@ function Home(props) {
     }
   }
 
+  const openBar = (type) => {
+    setBarType(type)
+    if(type) {
+      document.body.style.overflow = 'hidden'  
+    } else {
+      document.body.style.overflow = ''
+    }
+    
+  }
+
   return (
     <>
       <Header />
+      <NavigationArrow openBar={openBar} />
       <div className="contentContainer">
-      	<div className="leftSidebar">
-      	 <LeftSideBar setOpenModal={() => setOpenModal(true)} />
+      	<div className={barType == 'leftBar' ? "leftSidebar open" : "leftSidebar"}>
+      	  <LeftSideBar setOpenModal={() => setOpenModal(true)} openBar={openBar} />
       	</div>
       	<div className="centerContent">
       		<div className="centerBoxContainer">
@@ -273,8 +286,8 @@ function Home(props) {
 	      		{renderTabs()}
       		</div>
       	</div>
-      	<div className="rightSidebar">
-      		<ListSideBar />
+      	<div className={barType == 'rightBar' ? "rightSidebar open" : "rightSidebar"}>
+      		<ListSideBar openBar={openBar} />
       	</div>
       </div>
 

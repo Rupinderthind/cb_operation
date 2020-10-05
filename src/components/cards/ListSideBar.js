@@ -4,6 +4,9 @@ import CustomIcon from '../common/CustomIcon'
 function ListSideBar(props) {
   return (
     <div className="leftSidebarContent">
+      <div className="crossSection">
+        <i className="fa fa-times" onClick={() => props.openBar(null)}></i>
+      </div>
       <h4>Assigned Customers
         <button className="transparentBtn" onClick={() => props.setOpenModal && props.setOpenModal()}>
           <CustomIcon icon="Header/Icon/Add" />

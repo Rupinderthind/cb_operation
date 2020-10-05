@@ -7,15 +7,27 @@ import CustomerDetail from '../../components/cards/CustomerDetail'
 import TableContent from '../../components/common/TableContent'
 import CustomIcon from '../../components/common/CustomIcon'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import NavigationArrow from '../../components/common/NavigationArrow'
 
 const modalTabs = ['My Customers', 'All Customers']
 
 const Chat = () => {
   const [openModal, setOpenModal] = useState(false)
   const [modalActiveTab, setModalActiveTab] = useState(0)
+  const [barType, setBarType] = useState(null)
 
   const onChangeModalTab = (currentTab) => {
     setModalActiveTab(currentTab)
+  }
+
+  const openBar = (type) => {
+    setBarType(type)
+    if(type) {
+      document.body.style.overflow = 'hidden'  
+    } else {
+      document.body.style.overflow = ''
+    }
+    
   }
 
   const renderModalTabs = () => {
@@ -179,10 +191,12 @@ const Chat = () => {
 	return (
     <>
       <Header />
+      <NavigationArrow openBar={openBar} />
       <div className="contentContainer">
-      	<div className="leftSidebar">
+      	<div className={barType == 'leftBar' ? "leftSidebar open" : "leftSidebar"}>
       		<ChatList 
             openModal={() => setOpenModal(true)}
+            openBar={openBar}
           />
       	</div>
       	<div className="centerContent">
@@ -196,6 +210,12 @@ const Chat = () => {
                   </div>
                   White Jacques
                 </div>
+                <button className="sendBtn attach">
+                  <CustomIcon icon="Header/Icon/More" />
+                </button>
+                <button className="sendBtn">
+                  <CustomIcon icon="Dropdown/List/Oneline/List/Single%20line/Icon/Info" />
+                </button>
               </div>
 
               <div className="chatBody">
@@ -304,8 +324,8 @@ const Chat = () => {
             </div>
       		</div>
       	</div>
-      	<div className="rightSidebar">
-      		<CustomerDetail />
+      	<div className={barType == 'rightBar' ? "rightSidebar open" : "rightSidebar"}>
+      		<CustomerDetail openBar={openBar} />
       	</div>
       </div>
 

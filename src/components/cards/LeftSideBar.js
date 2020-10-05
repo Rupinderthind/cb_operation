@@ -4,6 +4,9 @@ import CustomIcon from '../common/CustomIcon'
 function LeftSideBar(props) {
   return (
     <div className="leftSidebarContent">
+      <div className="crossSection">
+        <i className="fa fa-times" onClick={() => props.openBar(null)}></i>
+      </div>
       <iframe 
         src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1750674.551865144!2d75.40116905!3d31.0182739!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1601317460851!5m2!1sen!2sin" 
         frameborder="0" 

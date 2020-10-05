@@ -132,6 +132,9 @@ const ChatList = (props) => {
 
 	return (
 		<div className="leftSidebarContent chatList">
+			<div className="crossSection">
+        <i className="fa fa-times" onClick={() => props.openBar(null)}></i>
+      </div>
       <h4>Chat
         <button className="transparentBtn" onClick={() => props.openModal()}>
           <CustomIcon icon="Edit/Stroke" />

@@ -2,6 +2,11 @@ import React from 'react';
 import CustomIcon from '../common/CustomIcon'
 
 function ListSideBar(props) {
+  
+  const onClickItem = () => {
+    props.history.push('/customer')
+  }
+
   return (
     <div className="leftSidebarContent">
       <div className="crossSection">
@@ -18,7 +23,7 @@ function ListSideBar(props) {
       </div>
       <div className="listBox">
         <ul>
-          <li onClick={() => props.setOpenModal && props.setOpenModal()}>
+          <li onClick={() => onClickItem()}>
             <a>
               <div className="userCon">
                 <CustomIcon icon="Placeholder/Person/Small" />
@@ -26,7 +31,7 @@ function ListSideBar(props) {
               Jhon Due
             </a>
           </li>
-          <li onClick={() => props.setOpenModal && props.setOpenModal()}>
+          <li onClick={() => onClickItem()}>
             <a>
               <div className="userCon">
                 <CustomIcon icon="Placeholder/Person/Small" />
@@ -34,7 +39,7 @@ function ListSideBar(props) {
               Jhon Due
             </a>
           </li>
-          <li onClick={() => props.setOpenModal && props.setOpenModal()}>
+          <li onClick={() => onClickItem()}>
             <a>
               <div className="userCon">
                 <CustomIcon icon="Placeholder/Person/Small" />
@@ -42,7 +47,7 @@ function ListSideBar(props) {
               Jhon Due
             </a>
           </li>
-          <li onClick={() => props.setOpenModal && props.setOpenModal()}>
+          <li onClick={() => onClickItem()}>
             <a>
               <div className="userCon">
                 <CustomIcon icon="Placeholder/Person/Small" />
@@ -50,7 +55,7 @@ function ListSideBar(props) {
               Jhon Due
             </a>
           </li>
-          <li onClick={() => props.setOpenModal && props.setOpenModal()}>
+          <li onClick={() => onClickItem()}>
             <a>
               <div className="userCon">
                 <CustomIcon icon="Placeholder/Person/Small" />

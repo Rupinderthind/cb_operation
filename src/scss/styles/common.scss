@@ -75,6 +75,7 @@ html, body, #root{
 	li {
 		display: inline-block;
 		margin: 0 6px;
+		position: relative;
 		a {
 			padding: 8px;
 	    border-radius: 50%;
@@ -109,6 +110,47 @@ html, body, #root{
 		    pointer-events: none;
 			}
 		}
+
+		.dropdown{
+			button {
+				padding: 0;
+				background: none;
+				border: none;
+				outline: none;
+				border-radius: 50%;
+				box-shadow: none;
+				a{
+					pointer-events: none;
+				}
+			}
+		}
+		.dropdown-menu{
+			min-width: auto;
+			width: 120px;
+			border-radius: 4px;
+			box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
+			border-color: #fff;
+			margin-top: 12px;
+			margin-right: 20px;
+			a{
+				display: block;
+				width: 100%;
+				padding: 0;
+				text-align: left;
+			}
+			button{
+				padding: 10px 15px;
+				font-size: 13px;
+				line-height: 16px;
+				font-weight: 500;
+				margin-bottom: 5px;
+				border-radius: 0;
+				transition: all linear 0.2s 0s;
+				&:hover{
+					background: #E4E6EB;
+				}
+			}
+		}
 	}
 }
 
@@ -118,18 +160,18 @@ html, body, #root{
 	height: 100%;
 	.leftSidebar{
 		display: flex;
-		width: 375px;
+		width: 370px;
 		padding: 0 15px;
 		height: 100%;
 	}
 	.rightSidebar {
 		display: flex;
-		width: 375px;
+		width: 370px;
 		padding: 0 15px;
 	}
 	.centerContent{
 		display: flex;
-		width: calc(100% - 750px);
+		width: calc(100% - 740px);
 		padding: 0 15px;
 		flex-direction: column;
 		align-items: center;
@@ -140,6 +182,9 @@ html, body, #root{
 			.contentArea{
 				min-height: calc(100% - 200px);
 				background: #fff;
+				.tableContent{
+					min-height: 400px;
+				}
 			}
 		}
 		&.bigArea {
@@ -220,6 +265,22 @@ html, body, #root{
 		img {
 			width: 100%;
 			display: block;
+		}
+		.shareBtn{
+			position: absolute;
+			width: 81.33px;
+			height: 81.33px;
+			border-radius: 50%;
+			background: rgba(0,0,0,0.7);
+			border: none;
+			outline: none;
+			left: calc(50% - 40.5px);
+			top: calc(50% - 40.5px);
+			color: #fff;
+			transition: all linear 0.2s 0s;
+			&:hover{
+				opacity: 0.8;
+			}
 		}
 	}
 	.sectionCointent {
@@ -699,8 +760,12 @@ html, body, #root{
 	.customerInfoBox{
 		display: flex;
 		width: 250px;
-		padding: 30px;
+		padding: 20px;
 		box-shadow: inset -0.5px 0px 0px #DADEE5;
+		overflow: auto;
+		.infoBox{
+			width: 100%;
+		}
 	}
 	.dealInfoBox{
 		display: flex;
@@ -712,14 +777,16 @@ html, body, #root{
 			.headingBox{
 				padding: 0;
 				margin-bottom: 20px;
+
 				.leftBar{
+					width: calc(100% - 216px);
 					h5{
 						font-size: 20px;
 						font-weight: 700;
 					}
 				}
 				.centerBar {
-					width: calc(100% - 100px);
+					width: 216px;
 					justify-content: flex-end;
 					ul {
 						li{
@@ -746,6 +813,22 @@ html, body, #root{
 	}
 	.reportingCon{
 		margin-top: 10px;
+		>p{
+			background: #F2F3F5;
+	    border-radius: 4px;
+	    padding: 8px 10px;
+	    color: #000;
+	    i{
+	    	float: right;
+	    	cursor: pointer;
+	    	position: relative;
+	    	top: -2px;
+	    	transition: all linear 0.2s 0s;
+	    	&:hover{
+	    		opacity: 0.7;
+	    	}
+	    }
+		}
 		.userCard{
 			margin-top: 10px;
 			.userCon{
@@ -765,6 +848,40 @@ html, body, #root{
 						font-size: 16px;
 					}
 				}
+			}
+		}
+		.teamMembersCon{
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			margin-top: 5px;
+			cursor: pointer;
+			margin-bottom: 15px;
+			.userCard {
+				.userCon{
+					width: 20px;
+					height: 20px;
+				}
+			}
+			li{
+				overflow: auto;
+				padding: 5px 10px;
+				transition: all linear 0.2s 0s;
+				border-radius: 4px;
+				&:hover{
+					background: #F2F3F5;
+				}
+				.userContent{
+					h5{
+						font-size: 13px;
+						font-weight: 500;
+					}
+					p{
+						font-size: 12px;
+						color: #707580;
+					}	
+				}
+				
 			}
 		}
 	}
@@ -1000,7 +1117,7 @@ html, body, #root{
   	width: 100%;
   	p{
   		font-size: 12px;
-  		color: #000;
+  		color: #707580;
   		margin: 0;
   		padding: 30px 10px;
   		a{
@@ -1010,7 +1127,7 @@ html, body, #root{
   	}
   }
 	.innerContainer{
-		width: 420px;
+		width: 440px;
 		display: flex;
 		align-self: center;
 		align-items: center;
@@ -1018,34 +1135,65 @@ html, body, #root{
 		flex-direction: column;
 	}
 	.logoBox{
-		width: 118px;
-		height: 118px;
+		width: 80px;
+		height: 80px;
 		overflow: hidden;
 		border-radius: 50%;
+		margin-bottom: -40px;
+		box-shadow: 0 0 1px #e6e5e5;
+		border: solid 1px #e6e5e5;
+		img{
+			width: 100%;
+		}
 	}
 	.loginBox{
 		display: flex;
 		flex-direction: column;
 		width: 100%;
 		background: #fff;
-		padding: 50px;
-		margin-top: 70px;
+		padding: 65px 65px 35px;
 		.formElement{
 			margin-bottom: 20px;
+			.MuiInputLabel-outlined{
+				transform: translate(14px, 16px) scale(1);
+			}
+			.MuiInputLabel-outlined.MuiInputLabel-shrink{
+				transform: translate(14px, -6px) scale(0.75)
+			}
+			.MuiOutlinedInput-notchedOutline{
+				height: 48px;
+			}
 			.MuiOutlinedInput-input{
 				font-size: 14px;
+				height: 44px;
+    		box-sizing: border-box;
 			}
 		}
 		.forgotLink{
+			margin-top: -15px;
 			a{
 				text-decoration: none;
 				font-size: 13px;
-				color: #000;
+				color: #707580;
 				margin-top: -10px;
 			}
 		}
 		.btnCon{
 			margin-top: 20px;
+			.mainBtn{
+				width: 100%;
+				height: 44px;
+				background: #CED2D9;
+				border-radius: 4px;
+				color: #fff;
+				border-color: #CED2D9;
+			}
+		}
+		.loginText{
+			font-size: 10px;
+			color: #707580;
+			text-align: center;
+			margin: 42px -15px 0;
 		}
 	}
 }
@@ -1445,7 +1593,7 @@ html, body, #root{
     left: 0;
     box-shadow: 0 0 10px #e1dfdf;
     z-index: 100;
-    opacity: 0.5;
+    opacity: 0.8;
 		&.right{
 			left: auto;
 			right: 0;
@@ -1458,5 +1606,52 @@ html, body, #root{
     font-size: 20px;
     color: #9f9c9c;
     padding: 0 5px;
+	}
+}
+
+
+.selecBox{
+	position: relative;
+	width: 120px;
+	margin-right: 12px;
+	&:after{
+		content: attr(x);
+		position: absolute;
+		border: solid 5px;
+		border-color: #40444D transparent transparent transparent;
+		top: 15px; 
+		right: 10px;
+		pointer-events: none;
+	}
+	select{
+		font-size: 12px;
+		width: 100%;
+		border: solid 1px #CED2D9;
+		border-radius: 4px;
+		height: 34px;
+		padding: 0 10px;
+		appearance: none;
+	}
+}
+
+.loginContainer{
+	background: #fff;
+	width: 100%;
+	border-radius: 4px;
+	.loginLogoBox{
+		height: 120px;
+		background: #51BB66;
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+	}
+	.loginBox{
+		h3{
+			font-size: 16px;
+			font-weight: 700;
+			margin: 0 -15px;
+			margin-bottom: 48px;
+			text-align: center;
+		}
 	}
 }

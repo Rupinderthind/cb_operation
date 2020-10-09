@@ -254,6 +254,7 @@ function Profile(props) {
                     activeTab={0}
                     tabs={userTabs}
                     noRightSection
+                    renderSelect
                   /> 
                 </div>
 

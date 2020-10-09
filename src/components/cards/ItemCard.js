@@ -5,6 +5,7 @@ function ItemCard(props) {
     <div className="itemBox">
       <div className="topSection">
         <img src="images/banner.jpg" />
+        <button className="shareBtn" onClick={() => props.setOpenModal()}>s</button>
         <div className="sectionCointent">
           <h4>2020 JHON DEERE 6145R</h4>
           <p>

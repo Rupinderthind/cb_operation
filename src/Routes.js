@@ -5,6 +5,7 @@ import Customer from './containers/Customer'
 import Profile from './containers/Profile'
 import Login from './containers/Login'
 import Chat from './containers/Chat'
+import Team from './containers/Team'
 
 function Routes(props) {
   return (
@@ -15,6 +16,7 @@ function Routes(props) {
         <Route path="/customer" render={(props) => <Customer {...props} />} />
         <Route path="/profile" render={(props) => <Profile {...props} />} />
         <Route path="/login" render={(props) => <Login {...props} />} />
+        <Route path="/team" render={(props) => <Team {...props} />} />
       </Switch>
     </Router>
   );

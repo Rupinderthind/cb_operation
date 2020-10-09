@@ -333,7 +333,7 @@ const Chat = () => {
         <ModalBody>
           <div className="modalContent">
             <div className="modalHeader">
-              <h3 className="heading">Suggested Share</h3>
+              <h3 className="heading">Message</h3>
               <HeadingBox 
                 activeTab={modalActiveTab}
                 tabs={modalTabs}

@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CustomIcon from './CustomIcon'
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { Link } from 'react-router-dom'
 
 function Header(props) {
   console.log(props, 'test')
+
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const toggle = () => setDropdownOpen(prevState => !prevState);
+
   return (
     <div className="header">
       <div className="leftSide">
@@ -13,18 +20,24 @@ function Header(props) {
       <div className="centerSide">
       	<ul>
       		<li>
-      			<a href="" className="active">Dashborad</a>
+      			<Link to="/" className="active">Dashborad</Link>
       		</li>
       		<li>
       			<a href="">DealMode</a>
       		</li>
+          <li>
+            <a href="">Customers</a>
+          </li>
+          <li>
+            <Link to="/team">My Team</Link>
+          </li>
       	</ul>
       </div>
       <div className="rightSide">
       	<ul className="iconList">
       		<li>
       			<a href="">
-            <CustomIcon icon="Navigation/Customers/Regular" />
+              <CustomIcon icon="Navigation/Customers/Regular" />
       			</a>
       		</li>
       		<li>
@@ -33,15 +46,26 @@ function Header(props) {
       			</a>
       		</li>
       		<li>
-      			<a href="">
+      			<Link to="/chat">
               <CustomIcon icon="Navigation/Chat/Regular" />
               <span className="badge">2</span>
-      			</a>
+      			</Link>
       		</li>
       		<li>
-      			<a href="" className="defaultBG">
-              <CustomIcon icon="Placeholder/Person/Regular" />
-      			</a>
+      			
+            <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+              <DropdownToggle>
+                <a className="defaultBG" onClick={() => toggle()}>
+                  <CustomIcon icon="Placeholder/Person/Regular" />
+                </a>
+              </DropdownToggle>
+              <DropdownMenu>
+                <Link to="/profile">
+                  <DropdownItem>Profile</DropdownItem>
+                </Link>
+                <DropdownItem>Logout</DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
       		</li>
       	</ul>
       </div>

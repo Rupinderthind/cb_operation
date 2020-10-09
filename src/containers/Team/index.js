@@ -6,20 +6,20 @@ import LeftSideBar from '../../components/cards/LeftSideBar'
 import ListSideBar from '../../components/cards/ListSideBar'
 import TableContent from '../../components/common/TableContent'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Row, Col } from 'reactstrap';
-import CustomerInfo from '../../components/cards/CustomerInfo'
+import ProfileInfo from '../../components/cards/ProfileInfo'
 import { Tooltip } from 'reactstrap';
+import CustomIcon from '../../components/common/CustomIcon'
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import CustomIcon from '../../components/common/CustomIcon'
 
 const userTabs = ['M', 'Q', 'Y']
 const modalTabs = ['Text', 'Email', 'Social']
 const bottomTabs = ["DealMode", "Shared", "Invoice out", "Invoice In", "Sold"]
 
-function Customer(props) {
+function Team(props) {
   console.log(props, 'test')
   const [activeTab, setActiveTab] = useState(0)
   const [modalActiveTab, setModalActiveTab] = useState(0)
@@ -246,20 +246,17 @@ function Customer(props) {
     <>
       <Header />
       <div className="contentContainer">
-      	<div className="leftSidebar">
-      	 <ListSideBar setOpenModal={() => setOpenModal(true)} />
-      	</div>
-      	<div className="centerContent bigArea">
+      	<div className="centerContent centeredArea">
       		<div className="centerBoxContainer">
 	      		<div className="dealContentBox">
               <div className="customerInfoBox">
-                <CustomerInfo />
+                <ProfileInfo teamMembers openTeamModal={() => setOpenModal(true)} />
               </div>
 
               <div className="dealInfoBox">
                 <div className="dealTitleCon">
                   <HeadingBox 
-                    title="Activity"
+                    title="My Team Activity / Ryan King"
                     activeTab={0}
                     tabs={userTabs}
                     noRightSection
@@ -337,7 +334,7 @@ function Customer(props) {
           <ModalBody className="customModal">
             <div className="modalContent">
               <div className="modalHeader">
-                <h3 className="heading">Customer Details</h3>         
+                <h3 className="heading">Add Team Member</h3>         
               </div>
               <div className="formConatiner">
                 <Row>
@@ -350,7 +347,19 @@ function Customer(props) {
                 </Row>
                 <Row>
                   <Col md={12}>
-                    <TextField label="Bussiness Name" variant="outlined" className="formElement" size="small" />
+                    <FormControl variant="outlined" className="formElement" size="small">
+                      <InputLabel>Select Role</InputLabel>
+                      <Select
+                        label="Country"
+                      >
+                        <MenuItem value="">
+                          <em>None</em>
+                        </MenuItem>
+                        <MenuItem value={10}>Ten</MenuItem>
+                        <MenuItem value={20}>Twenty</MenuItem>
+                        <MenuItem value={30}>Thirty</MenuItem>
+                      </Select>
+                    </FormControl>
                   </Col>
                 </Row>
                 <Row>
@@ -430,20 +439,14 @@ function Customer(props) {
                     <TextField label="Zip Code" variant="outlined" className="formElement" size="small" />
                   </Col>
                 </Row>
-                <Row>
-                  <Col md={12}>
-                    <TextField label="Address Line" variant="outlined" className="formElement" size="small" />
-                  </Col>
-                </Row>
               </div>
             </div>
           </ModalBody>
           <ModalFooter className="modalFooter">
             <Button color="secondary">Cancel</Button>{' '}
-            <Button color="primary">Save</Button>
+            <Button color="primary">Invite</Button>
           </ModalFooter>
         </Modal>
-
       </div>
 
       
@@ -452,4 +455,4 @@ function Customer(props) {
   );
 }
 
-export default Customer;
+export default Team;

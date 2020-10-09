@@ -2,6 +2,15 @@ import React from 'react';
 import CustomIcon from './CustomIcon'
 
 function HeadingBox(props) {
+  const renderSearchBar = () => {
+    if (props.renderSelect) {
+      return <div className="selecBox">
+        <select className="form-control">
+          <option>September</option>
+        </select>
+      </div>
+    }
+  }
   return (
     <div className="headingBox">
       {props.title ?
@@ -13,6 +22,7 @@ function HeadingBox(props) {
       }
       
       <div className="centerBar">
+        {renderSearchBar()}
         <ul>
           {props.tabs.map((item, index) => {
             return  <li className={props.activeTab === index && "active"} key={index} onClick={() => props.onChangeTab(index)}>

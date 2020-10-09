@@ -22,9 +22,9 @@ function Home(props) {
   const renderTabs = () => {
     if (activeTab === 0) {
       return  <div>
-                <ItemCard />
-                <ItemCard />
-                <ItemCard />
+                <ItemCard setOpenModal={() => setOpenModal(true)} />
+                <ItemCard setOpenModal={() => setOpenModal(true)} />
+                <ItemCard setOpenModal={() => setOpenModal(true)} />
               </div>
     } else if (activeTab === 1) {
       return  <div className="contentArea">
@@ -40,6 +40,8 @@ function Home(props) {
   const onChangeModalTab = (currentTab) => {
     setModalActiveTab(currentTab)
   }
+
+  console.log(props, 'tedst')
 
   const renderModalTabs = () => {
     if (modalActiveTab === 0) {
@@ -273,7 +275,7 @@ function Home(props) {
       <NavigationArrow openBar={openBar} />
       <div className="contentContainer">
       	<div className={barType == 'leftBar' ? "leftSidebar open" : "leftSidebar"}>
-      	  <LeftSideBar setOpenModal={() => setOpenModal(true)} openBar={openBar} />
+      	  <LeftSideBar openBar={openBar} />
       	</div>
       	<div className="centerContent">
       		<div className="centerBoxContainer">
@@ -287,7 +289,7 @@ function Home(props) {
       		</div>
       	</div>
       	<div className={barType == 'rightBar' ? "rightSidebar open" : "rightSidebar"}>
-      		<ListSideBar openBar={openBar} />
+      		<ListSideBar history={props.history} openBar={openBar} />
       	</div>
       </div>
 

@@ -41,6 +41,9 @@ function LeftSideBar(props) {
                 <CustomIcon icon="Placeholder/Person/Small" />
               </div>
               White Jacques
+              <i>
+                <CustomIcon icon="Icon/Share" />
+              </i>
             </a>
           </li>
           <li onClick={() => props.setOpenModal && props.setOpenModal()}>
@@ -49,6 +52,9 @@ function LeftSideBar(props) {
                 <CustomIcon icon="Placeholder/Person/Small" />
               </div>
               White Jacques
+              <i>
+                <CustomIcon icon="Icon/Share" />
+              </i>
             </a>
           </li>
           <li onClick={() => props.setOpenModal && props.setOpenModal()}>
@@ -57,6 +63,9 @@ function LeftSideBar(props) {
                 <CustomIcon icon="Placeholder/Person/Small" />
               </div>
               White Jacques
+              <i>
+                <CustomIcon icon="Icon/Share" />
+              </i>
             </a>
           </li>
         </ul>

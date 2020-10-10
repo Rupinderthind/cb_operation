@@ -1,11 +1,43 @@
 import React from 'react';
+import CustomIcon from '../common/CustomIcon'
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
+
+const options = {
+    items: 1,
+    nav: true,
+    rewind: true,
+    autoplay: true
+};
 
 function ItemCard(props) {
   return (
     <div className="itemBox">
       <div className="topSection">
-        <img src="images/banner.jpg" />
-        <button className="shareBtn" onClick={() => props.setOpenModal()}>s</button>
+        <OwlCarousel
+          className="owl-theme"
+          loop
+          nav
+          options={options}
+          items={1}
+        >
+          <div class="item">
+            <img src="images/banner.jpg" />
+          </div>
+          <div class="item">
+            <img src="images/banner.jpg" />
+          </div>
+          <div class="item">
+            <img src="images/banner.jpg" />
+          </div>
+          <div class="item">
+            <img src="images/banner.jpg" />
+          </div>
+        </OwlCarousel>
+        <button className="shareBtn" onClick={() => props.setOpenModal()}>
+          <CustomIcon icon="Mobile_Share" />
+        </button>
         <div className="sectionCointent">
           <h4>2020 JHON DEERE 6145R</h4>
           <p>
@@ -23,7 +55,7 @@ function ItemCard(props) {
       </div>
       <div className="commentBox">
         <div className="imgCon">
-          <img src="images/avatar.png" />
+          <CustomIcon icon="Placeholder/Person/Small" />
         </div>
         <input type="text" placeholder="Add a Comment..." />
       </div>

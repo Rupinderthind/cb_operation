@@ -28,6 +28,9 @@ function Login(props) {
         </div>
       </div>
       <div className="bottomContainer">
+        <div className="text-center">
+          <img src="/images/arrowLogo.png" />
+        </div>
         <p>Powered by Arrow © 2020. All rights reserved.</p>
       </div>
     </div>

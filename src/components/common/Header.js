@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import CustomIcon from './CustomIcon'
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 function Header(props) {
   console.log(props, 'test')
@@ -20,16 +20,16 @@ function Header(props) {
       <div className="centerSide">
       	<ul>
       		<li>
-      			<Link to="/" className="active">Dashborad</Link>
+      			<NavLink exact to="/" activeClassName="active">Dashborad</NavLink>
       		</li>
       		<li>
       			<a href="">DealMode</a>
       		</li>
           <li>
-            <a href="">Customers</a>
+            <NavLink to="/customer" activeClassName="active">Customers</NavLink>
           </li>
           <li>
-            <Link to="/team">My Team</Link>
+            <NavLink to="/team" activeClassName="active">My Team</NavLink>
           </li>
       	</ul>
       </div>
@@ -37,19 +37,14 @@ function Header(props) {
       	<ul className="iconList">
       		<li>
       			<a href="">
-              <CustomIcon icon="Navigation/Customers/Regular" />
-      			</a>
-      		</li>
-      		<li>
-      			<a href="">
               <CustomIcon icon="Navigation/Notifications/Regular" />
       			</a>
       		</li>
       		<li>
-      			<Link to="/chat">
+      			<NavLink to="/chat" activeClassName="active">
               <CustomIcon icon="Navigation/Chat/Regular" />
               <span className="badge">2</span>
-      			</Link>
+      			</NavLink>
       		</li>
       		<li>
       			
@@ -60,9 +55,9 @@ function Header(props) {
                 </a>
               </DropdownToggle>
               <DropdownMenu>
-                <Link to="/profile">
+                <NavLink to="/profile" activeClassName="active">
                   <DropdownItem>Profile</DropdownItem>
-                </Link>
+                </NavLink>
                 <DropdownItem>Logout</DropdownItem>
               </DropdownMenu>
             </Dropdown>

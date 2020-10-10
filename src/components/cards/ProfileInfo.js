@@ -14,7 +14,6 @@ function ProfileInfo(props) {
                     <div className="userCard">
                       <div className="userCon">
                         <CustomIcon icon="Placeholder/Person/Small" />
-                        <img src="images/avatar.png" />
                       </div>
                       <div className="userContent">
                         <h5>White Jacques</h5>
@@ -26,7 +25,6 @@ function ProfileInfo(props) {
                     <div className="userCard">
                       <div className="userCon">
                         <CustomIcon icon="Placeholder/Person/Small" />
-                        <img src="images/avatar.png" />
                       </div>
                       <div className="userContent">
                         <h5>White Jacques</h5>
@@ -38,7 +36,6 @@ function ProfileInfo(props) {
                     <div className="userCard">
                       <div className="userCon">
                         <CustomIcon icon="Placeholder/Person/Small" />
-                        <img src="images/avatar.png" />
                       </div>
                       <div className="userContent">
                         <h5>White Jacques</h5>
@@ -50,7 +47,6 @@ function ProfileInfo(props) {
                     <div className="userCard">
                       <div className="userCon">
                         <CustomIcon icon="Placeholder/Person/Small" />
-                        <img src="images/avatar.png" />
                       </div>
                       <div className="userContent">
                         <h5>White Jacques</h5>
@@ -67,7 +63,6 @@ function ProfileInfo(props) {
                 <div className="userCard">
                   <div className="userCon">
                     <CustomIcon icon="Placeholder/Person/Small" />
-                    <img src="images/avatar.png" />
                   </div>
                   <div className="userContent">
                     <h5>White Jacques</h5>
@@ -93,7 +88,7 @@ function ProfileInfo(props) {
   return (
     <div className="infoBox">
       <div className="imgCon">
-        <img src="images/avatar.png" />
+        <CustomIcon icon="Placeholder/Person/Small" />
       </div>
       <h4>
         Chad Rembold

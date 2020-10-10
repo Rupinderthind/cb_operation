@@ -27,6 +27,34 @@ const Chat = () => {
     } else {
       document.body.style.overflow = ''
     }
+  }
+
+  const renderPopover = () => {
+    return <div className="sidePopover">
+            <div className="infoBox">
+              <div className="imgCon">
+                <CustomIcon icon="Placeholder/Person/Small" />
+              </div>
+              <div className="popoverContent">
+                <h4>
+                  Christopher Pawelski
+                </h4>
+                <p>Rachel Farming</p>
+                <ul className="userActions">
+                  <li>
+                    <a href="">
+                      <CustomIcon icon="Icon/Chat%20Regular" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <CustomIcon icon="Icon/Email" />
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>  
     
   }
 
@@ -228,7 +256,28 @@ const Chat = () => {
                   <li>
                     <div className="userCard">
                       <div className="userCon">
-                        <CustomIcon icon="Placeholder/Person/Small" />
+                        <div className="userConInner">
+                          <CustomIcon icon="Placeholder/Person/Small" />
+                        </div>
+                        {renderPopover()}
+                      </div>
+                      <div className="userContent">
+                        <h6>
+                          White Jacques
+                          <span>8:13 AM</span>
+                        </h6>
+                        <p>Hey Guys, Hows is the business going on?</p>
+                      </div>
+                      
+                    </div>
+                  </li>
+                  <li>
+                    <div className="userCard">
+                      <div className="userCon">
+                        <div className="userConInner">
+                          <CustomIcon icon="Placeholder/Person/Small" />
+                        </div>
+                        {renderPopover()}
                       </div>
                       <div className="userContent">
                         <h6>
@@ -242,7 +291,10 @@ const Chat = () => {
                   <li>
                     <div className="userCard">
                       <div className="userCon">
-                        <CustomIcon icon="Placeholder/Person/Small" />
+                        <div className="userConInner">
+                          <CustomIcon icon="Placeholder/Person/Small" />
+                        </div>
+                        {renderPopover()}
                       </div>
                       <div className="userContent">
                         <h6>
@@ -256,21 +308,10 @@ const Chat = () => {
                   <li>
                     <div className="userCard">
                       <div className="userCon">
-                        <CustomIcon icon="Placeholder/Person/Small" />
-                      </div>
-                      <div className="userContent">
-                        <h6>
-                          White Jacques
-                          <span>8:13 AM</span>
-                        </h6>
-                        <p>Hey Guys, Hows is the business going on?</p>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="userCard">
-                      <div className="userCon">
-                        <CustomIcon icon="Placeholder/Person/Small" />
+                        <div className="userConInner">
+                          <CustomIcon icon="Placeholder/Person/Small" />
+                        </div>
+                        {renderPopover()}
                       </div>
                       <div className="userContent">
                         <h6>
@@ -284,7 +325,10 @@ const Chat = () => {
                   <li className="send">
                     <div className="userCard">
                       <div className="userCon">
-                        <CustomIcon icon="Placeholder/Person/Small" />
+                        <div className="userConInner">
+                          <CustomIcon icon="Placeholder/Person/Small" />
+                        </div>
+                        {renderPopover()}
                       </div>
                       <div className="userContent">
                         <h6>
@@ -298,7 +342,10 @@ const Chat = () => {
                   <li className="send">
                     <div className="userCard">
                       <div className="userCon">
-                        <CustomIcon icon="Placeholder/Person/Small" />
+                        <div className="userConInner">
+                          <CustomIcon icon="Placeholder/Person/Small" />
+                        </div>
+                        {renderPopover()}
                       </div>
                       <div className="userContent">
                         <h6>

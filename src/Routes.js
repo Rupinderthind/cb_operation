@@ -13,10 +13,10 @@ function Routes(props) {
       <Switch>
         <Route path="/chat" exact render={(props) => <Chat {...props} />} />
         <Route path="/" exact render={(props) => <Home {...props} />} />
-        <Route path="/customer" render={(props) => <Customer {...props} />} />
-        <Route path="/profile" render={(props) => <Profile {...props} />} />
-        <Route path="/login" render={(props) => <Login {...props} />} />
-        <Route path="/team" render={(props) => <Team {...props} />} />
+        <Route path="/customer" exact render={(props) => <Customer {...props} />} />
+        <Route path="/profile" exact render={(props) => <Profile {...props} />} />
+        <Route path="/login" exact render={(props) => <Login {...props} />} />
+        <Route path="/team" exact render={(props) => <Team {...props} />} />
       </Switch>
     </Router>
   );

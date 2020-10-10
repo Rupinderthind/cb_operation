@@ -219,36 +219,35 @@ function Home(props) {
                     </li>
                   </ul>
                 </div>
-                <h5 className="subHeading">Select the channel you wanted to post</h5>
                 <div className="socialList">
                   <ul>
                     <li>
                       <div className="socialIcon twitter">
-                        <i className="fab fa-twitter"></i>
+                        <CustomIcon icon="Twitter" />
                       </div>
                       Twitter
                     </li>
                     <li>
                       <div className="socialIcon facebook">
-                        <i className="fab fa-facebook-square"></i>
+                        <CustomIcon icon="Facebook" />
                       </div>
                       Facebook
                     </li>
                     <li>
                       <div className="socialIcon linkedin">
-                        <i className="fab fa-linkedin"></i>
+                        <CustomIcon icon="Linkdin" />
                       </div>
                       Linkedin
                     </li>
                     <li>
                       <div className="socialIcon tiktok">
-                        <i className="fab fa-tiktok"></i>
+                        <CustomIcon icon="Tiktok" />
                       </div>
                       TikTok
                     </li>
                     <li>
                       <div className="socialIcon whatsapp">
-                        <i className="fab fa-whatsapp"></i>
+                        <CustomIcon icon="Whatsapp" />
                       </div>
                       WhatsApp
                     </li>
@@ -289,7 +288,7 @@ function Home(props) {
       		</div>
       	</div>
       	<div className={barType == 'rightBar' ? "rightSidebar open" : "rightSidebar"}>
-      		<ListSideBar history={props.history} openBar={openBar} />
+      		<ListSideBar history={props.history} openBar={openBar} popover />
       	</div>
       </div>
 

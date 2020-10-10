@@ -1,4 +1,5 @@
 import React from 'react';
+import CustomIcon from '../common/CustomIcon'
 
 function TableContent(props) {
   return (
@@ -17,7 +18,7 @@ function TableContent(props) {
             <td>
               <div className="userCard">
                 <div className="userCon">
-                  <img src="images/avatar.png" />
+                  <CustomIcon icon="Placeholder/Person/Small" />
                 </div>
                 White Jacques
               </div>
@@ -36,7 +37,7 @@ function TableContent(props) {
             <td>
               <div className="userCard">
                 <div className="userCon">
-                  <img src="images/avatar.png" />
+                  <CustomIcon icon="Placeholder/Person/Small" />
                 </div>
                 White Jacques
               </div>
@@ -55,7 +56,7 @@ function TableContent(props) {
             <td>
               <div className="userCard">
                 <div className="userCon">
-                  <img src="images/avatar.png" />
+                  <CustomIcon icon="Placeholder/Person/Small" />
                 </div>
                 White Jacques
               </div>
@@ -74,7 +75,7 @@ function TableContent(props) {
             <td>
               <div className="userCard">
                 <div className="userCon">
-                  <img src="images/avatar.png" />
+                  <CustomIcon icon="Placeholder/Person/Small" />
                 </div>
                 White Jacques
               </div>

@@ -5,7 +5,7 @@ function CustomerInfo(props) {
   return (
     <div className="infoBox">
       <div className="imgCon">
-        <img src="images/avatar.png" />
+        <CustomIcon icon="Placeholder/Person/Small" />
       </div>
       <h4>
         Christopher Pawelski

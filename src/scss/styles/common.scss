@@ -18,8 +18,8 @@ html, body, #root{
 	margin-bottom: 10px;
 	position: fixed;
 	width: 100%;
-	z-index: 1;
-	box-shadow: 0 0 10px #ccc;
+	z-index: 10;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
 	.leftSide{
 		display: flex;
 		flex: 1;
@@ -137,6 +137,19 @@ html, body, #root{
 				width: 100%;
 				padding: 0;
 				text-align: left;
+				position: relative;
+				&.active{
+					&:after{
+						content: '';
+						display: inline-block;
+						width: 20px;
+						height: 20px;
+						position: absolute;
+						background: url("/Icons/Icon/Tick.svg") no-repeat;
+						right: 10px;
+						top: 8px;
+					}
+				}
 			}
 			button{
 				padding: 10px 15px;
@@ -156,7 +169,7 @@ html, body, #root{
 
 .contentContainer{
 	display: flex;
-	padding-top: 85px;
+	padding-top: 70px;
 	height: 100%;
 	.leftSidebar{
 		display: flex;
@@ -184,6 +197,18 @@ html, body, #root{
 				background: #fff;
 				.tableContent{
 					min-height: 400px;
+					padding: 0 10px;
+					position: relative;
+					&:after{
+						content: '';
+						display: inline-block;
+						width: 100%;
+						height: 1px;
+						box-shadow: inset 0px -0.5px 0px #DADEE5;
+						top: 38px;
+						left: 0;
+						position: absolute;
+					}
 				}
 			}
 		}
@@ -262,9 +287,73 @@ html, body, #root{
 	margin: 10px 0;
 	.topSection {
 		position: relative;
+		overflow: hidden;
+		&:after{
+			content: '';
+			position: absolute;
+			display: inline-block;
+			width: 100%;
+			height: 113px;
+			bottom: 0;
+			background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+			z-index: 1;
+		}
 		img {
 			width: 100%;
 			display: block;
+		}
+		.owl-theme {
+			.owl-nav button, .owl-nav button.owl-next{
+				position: absolute;
+				top: calc(50% - 20px);
+				width: 39px;
+				height: 39px;
+				border-radius: 50%;
+				background: #40444D;
+				font-size: 0;
+				outline: none;
+				opacity: 0.7;
+				transition: all linear 0.2s 0s;
+				&:hover{
+					opacity: 1;
+				}
+				span{
+					display: inline-block;
+					width: 8px;
+					height: 12px;
+					background: url("/images/Mask.png") no-repeat;
+				}
+				&.owl-prev{
+					left: 15px;
+					span{
+						transform: rotate(180deg);
+					}
+				}
+				&.owl-next{
+					right: 15px;
+				}
+			}
+			.owl-dots {
+				position: absolute;
+				bottom: 55px;
+				width: 100%;
+				.owl-dot{
+					span{
+						width: 6px;
+						height: 6px;
+						opacity: 0.56;
+						border: 1px solid #FFFFFF;
+						margin: 5px;
+						background: none;
+					}
+					&.active{
+						span{
+							background: #fff;
+							opacity: 1;
+						}
+					}
+				}
+			}
 		}
 		.shareBtn{
 			position: absolute;
@@ -278,6 +367,13 @@ html, body, #root{
 			top: calc(50% - 40.5px);
 			color: #fff;
 			transition: all linear 0.2s 0s;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			z-index: 9;
+			img{
+				width: auto;
+			}
 			&:hover{
 				opacity: 0.8;
 			}
@@ -288,6 +384,7 @@ html, body, #root{
 		bottom: 0;
 		width: 100%;
 		padding: 10px;
+		z-index: 10;
 		h4{
 			color: #fff;
 			font-size: 15px;
@@ -375,6 +472,11 @@ html, body, #root{
 	h4{
 		font-size: 16px;
 		margin: 12px 0;
+		font-weight: 700;
+		img{
+			display: inline-block !important;
+			margin-left: 10px;
+		}
 		button{
 			float: right;
 		}
@@ -391,40 +493,58 @@ html, body, #root{
 		}
 		input[type="text"]{
 			width: 100%;
-			background: #edeff3;
-			border: solid 1px #e2e5ec;
+			background: #E4E6EB;
+			border: solid 0.5px #CED2D9;
 			height: 40px;
 			border-radius: 4px;
 			padding: 0 10px;
-			padding-left: 40px;
+			padding-left: 30px;
 			transition: all linear 0.2s 0s;
 			outline: none;
 			height: 30px;
+			font-size: 12px;
 			&:focus{
 				box-shadow: 0 0 20px #e8e5e5;
 			}
 		}
 	}
-	.listBox{
-		ul{
+	>.listBox{
+		>ul{
 			list-style: none;
-			li {
-				overflow: auto;
+			>li {
 				cursor: pointer;
-				a{
+				position: relative;
+				&:hover .sidePopover{
+					opacity: 1;
+					pointer-events: auto;
+				}
+				&:after{
+					display: block;
+					width: 100%;
+				}
+				>a{
 					display: block;
 			    font-size: 13px;
 			    font-weight: 500;
 			    text-decoration: none;
 			    overflow: auto;
 			    margin-bottom: 5px;
-			    padding: 10px 5px;
+			    padding: 10px;
 			    line-height: 20px;
 			    border-radius: 5px;
 			    color: #111;
 			    transition: all linear 0.2s 0s;
 			    &:hover{
 			    	background: #fff;
+			    }
+			    >i{
+			    	float: right;
+			    	display: none;
+			    }
+			    &:hover{
+			    	i{
+			    		display: inline-block;
+			    	}
 			    }
 				}
 				.userCon{
@@ -505,12 +625,12 @@ html, body, #root{
 				}
 			}
 			.dateCon{
-				padding: 5px 20px;
+				padding: 2px 20px;
 				border: 1px solid #CED2D9;
 				border-radius: 100px;
 				font-size: 10px;
 				text-align: center;
-				margin: 20px 0;
+				margin: 10px 0;
 				display: inline-block;
 			}
 			.itemImgBox{
@@ -563,7 +683,7 @@ html, body, #root{
 		thead {
 			tr{
 				th{
-					border-bottom: solid 1px #CED2D9;		
+					border-bottom: none;		
 					padding: 10px;
 					font-size: 13px;
 					text-align: left;
@@ -575,7 +695,7 @@ html, body, #root{
 			tr{
 				transition: all linear 0.2s 0s;
 				&:hover{
-					background: #ecebeb;
+					background: #F2F3F5;
 				}
 				td{
 					padding: 10px;
@@ -704,6 +824,9 @@ html, body, #root{
 
 .socialList{
 	display: flex;
+	margin-top: 30px;
+	align-items: center;
+	justify-content: center;
 	ul {
 		display: flex;
 		list-style: none;
@@ -715,7 +838,7 @@ html, body, #root{
 			flex-direction: column;
 			text-align: center;
 			font-size: 10px;
-			margin-right: 25px;
+			margin: 0 12.5px;
 			cursor: pointer;
 			transition: opacity linear 0.2s 0s;
 			&:hover {
@@ -888,6 +1011,7 @@ html, body, #root{
 	h4{
 		font-size: 14px;
 		font-weight: 700;
+		margin-bottom: 0;
 		img {
 			display: inline-block !important;
 			margin-left: 5px;
@@ -1103,7 +1227,7 @@ html, body, #root{
 
 .loginCon{
 	height: 100%;
-	background: #E5E5E5;
+	background: #F2F3F5;
 	display: flex;
 	align-self: center;
 	justify-content: center;
@@ -1119,7 +1243,7 @@ html, body, #root{
   		font-size: 12px;
   		color: #707580;
   		margin: 0;
-  		padding: 30px 10px;
+  		padding: 5px 10px 30px;
   		a{
   			color: #196EE5;
   			text-decoration: none;
@@ -1133,6 +1257,7 @@ html, body, #root{
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
+		padding-bottom: 100px;
 	}
 	.logoBox{
 		width: 80px;
@@ -1152,6 +1277,8 @@ html, body, #root{
 		width: 100%;
 		background: #fff;
 		padding: 65px 65px 35px;
+		position: relative;
+		z-index: 10;
 		.formElement{
 			margin-bottom: 20px;
 			.MuiInputLabel-outlined{
@@ -1291,7 +1418,7 @@ html, body, #root{
 		ul {
 			li{
 				a{
-			    padding: 5px;
+			    padding: 5px 10px;
 					.userName{
 						float: left;
 						.name {
@@ -1408,18 +1535,59 @@ html, body, #root{
 		padding: 20px;
 		height: calc(100% - 106px);
 		overflow: auto;
+		.userCard {
+			position: relative;
+			.userCon{
+				overflow: visible;
+				.userConInner{
+					overflow: hidden;
+				}
+				&:hover .sidePopover{
+					opacity: 1;
+					pointer-events: auto;
+				}
+			}
+			.sidePopover{
+				left: 30px;
+				&:after{
+					right: auto;
+					left: -10px;
+				}
+				.userActions li{
+					margin-bottom: 0;
+					margin-top: 10px;
+					&:after{
+						display: none;
+					}
+					img{
+						width: auto;
+					}
+					a{
+						display: flex;
+						justify-content: center;
+						align-items: center;
+					}
+				}
+			}
+		}
 		ul{
 			list-style: none;
 			padding: 0;
 			margin: 0;
 			li{
-				overflow: auto;
 				margin-bottom: 10px;
+				&:after{
+					display: block;
+					content: '';
+					width: 100%;
+					height: 1px;
+					clear: both;
+				}
 				&.align-center{
 					text-align: center;
 				}
 				.dateCon{
-					padding: 5px 20px;
+					padding: 2px 20px;
 					border: 1px solid #CED2D9;
 					border-radius: 100px;
 					font-size: 10px;
@@ -1638,12 +1806,25 @@ html, body, #root{
 	background: #fff;
 	width: 100%;
 	border-radius: 4px;
+	position: relative;
+	&:after{
+		content: attr(x);
+		display: inline-block;
+		width: 380px;
+		height: 360px;
+		position: absolute;
+		right: -45px;
+		bottom: -30px;
+		background: url('/images/login_pattern.png') no-repeat;
+	}
 	.loginLogoBox{
 		height: 120px;
-		background: #51BB66;
 		display: flex;
 		align-items: flex-end;
 		justify-content: center;
+		position: relative;
+		z-index: 11;
+		background: #51BB66 url('/images/MaskGroup.png') no-repeat;
 	}
 	.loginBox{
 		h3{
@@ -1652,6 +1833,70 @@ html, body, #root{
 			margin: 0 -15px;
 			margin-bottom: 48px;
 			text-align: center;
+		}
+	}
+}
+.formConatiner, .loginBox, .customerDetail{
+	.MuiOutlinedInput-notchedOutline{
+		border: 0.5px solid #CED2D9;
+	}
+	.MuiFormLabel-root.Mui-focused{
+		color: #000
+	}
+	.MuiOutlinedInput-root.Mui-focused {
+		color: #000;
+
+		.MuiOutlinedInput-notchedOutline{
+			border-color: #000;
+			border-width: 0.5px;
+		}
+	}	
+}
+
+.customerDetail{
+	.MuiOutlinedInput-notchedOutline{
+		border: 0.5px solid #CED2D9;
+		background: #EDEFF2;
+	}
+}
+
+
+.sidePopover{
+	background: #fff;
+	position: absolute;
+	padding: 20px;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
+	border-radius: 4px;
+	z-index: 10;
+	width: 210px;
+	left: -220px;
+	top: 0;
+	opacity: 0;
+	transition: all linear 0.2s 0s;
+	pointer-events: none;
+	&:after{
+		content: '';
+		display: block;
+		width: 10px;
+		height: 100%;
+		position: absolute;
+		right: -10px;
+		top: 0;	
+	}
+	.infoBox {
+		.imgCon{
+			width: 24px;
+			height: 24px;
+			float: left;
+		}
+	}
+	.popoverContent{
+		width: calc(100% - 24px);
+		float: left;
+		padding-left: 10px;
+		h4{
+			margin-top: 0;
+			font-size: 13px;
 		}
 	}
 }

@@ -5,12 +5,17 @@ function NavigationArrow(props) {
 
   return (
     <div className="arrowsCon">
-      <button className="arrowBtn right" onClick={() => props.openBar('rightBar')}>
-      	<i className="fas fa-chevron-left"></i>
-      </button>
+      
       <button className="arrowBtn left" onClick={() => props.openBar('leftBar')}>
-      	<i className="fas fa-chevron-right"></i>
-      </button>
+        	<i className="fas fa-chevron-right"></i>
+        </button>
+      {!props.hideRight ? 
+      	<button className="arrowBtn right" onClick={() => props.openBar('rightBar')}>
+	      	<i className="fas fa-chevron-left"></i>
+	      </button>
+        :
+        null
+      }
     </div>
   );
 }

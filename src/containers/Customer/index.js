@@ -14,6 +14,7 @@ import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import CustomIcon from '../../components/common/CustomIcon'
+import NavigationArrow from '../../components/common/NavigationArrow'
 
 const userTabs = ['M', 'Q', 'Y']
 const modalTabs = ['Text', 'Email', 'Social']
@@ -25,6 +26,7 @@ function Customer(props) {
   const [modalActiveTab, setModalActiveTab] = useState(0)
   const [tooltipOpen, setTooltipOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false)
+  const [barType, setBarType] = useState(null)
 
   const toggle = () => setTooltipOpen(!tooltipOpen);
 
@@ -242,12 +244,23 @@ function Customer(props) {
     }
   }
 
+  const openBar = (type) => {
+    setBarType(type)
+    if(type) {
+      document.body.style.overflow = 'hidden'  
+    } else {
+      document.body.style.overflow = ''
+    }
+    
+  }
+
   return (
     <>
       <Header />
+      <NavigationArrow openBar={openBar} hideRight />
       <div className="contentContainer">
-      	<div className="leftSidebar">
-      	 <ListSideBar setOpenModal={() => setOpenModal(true)} />
+      	<div className={barType == 'leftBar' ? "leftSidebar open" : "leftSidebar"}>
+      	 <ListSideBar setOpenModal={() => setOpenModal(true)} openBar={openBar} />
       	</div>
       	<div className="centerContent bigArea">
       		<div className="centerBoxContainer">
@@ -332,6 +345,7 @@ function Customer(props) {
             </div>
       		</div>
       	</div>
+        <div className="rightSidebar"></div>
 
         <Modal isOpen={openModal} toggle={() => setOpenModal(false)}>
           <ModalBody className="customModal">

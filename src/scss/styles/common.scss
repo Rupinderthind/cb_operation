@@ -22,18 +22,19 @@ html, body, #root{
 	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
 	.leftSide{
 		display: flex;
-		flex: 1;
+		width: 150px;
+
 		.logoLink{
 			display: inline-block;
 			img {
-				max-width: 200px;
+				max-width: 150px;
 			}
 		}
 	}
 	.centerSide {
 		display: flex;
-		flex: 1;
 		text-align: center;
+		width: calc(100% - 300px);
 		ul {
 			width: 100%;
 			list-style: none;
@@ -59,8 +60,8 @@ html, body, #root{
 	}
 	.rightSide {
 		display: flex;
-		flex: 1;
 		text-align: right;
+		width: 200px;
 	}
 }
 
@@ -176,11 +177,13 @@ html, body, #root{
 		width: 370px;
 		padding: 0 15px;
 		height: 100%;
+		overflow: auto;
 	}
 	.rightSidebar {
 		display: flex;
 		width: 370px;
 		padding: 0 15px;
+		overflow: auto;
 	}
 	.centerContent{
 		display: flex;
@@ -214,7 +217,7 @@ html, body, #root{
 		}
 		&.bigArea {
 			width: calc(100% - 350px);
-			align-items: flex-start;
+			align-items: center;
 			height: 100%;
 			.centerBoxContainer {
 				max-width: 900px;
@@ -246,6 +249,9 @@ html, body, #root{
 			font-size: 16px;
 			margin: 0;
 			font-weight: 700;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
 		}
 	}
 	.centerBar {
@@ -371,11 +377,22 @@ html, body, #root{
 			align-items: center;
 			justify-content: center;
 			z-index: 9;
+			opacity: 0;
+			pointer-events: none;
 			img{
 				width: auto;
 			}
 			&:hover{
 				opacity: 0.8;
+			}
+		}
+		&:hover{
+			.shareBtn{
+				opacity: 0.8;
+				pointer-events: auto;
+				&:hover{
+					opacity: 1;
+				}
 			}
 		}
 	}
@@ -508,7 +525,7 @@ html, body, #root{
 			}
 		}
 	}
-	>.listBox{
+	.listBox{
 		>ul{
 			list-style: none;
 			>li {
@@ -554,6 +571,7 @@ html, body, #root{
 					overflow: hidden;
 					float: left;
 					margin-right: 10px;
+					background: #e4e6eb;
 					img{
 						width: 100%;
 					}
@@ -1672,112 +1690,6 @@ html, body, #root{
 	display: none;
 }
 
-
-
-@media (max-width: 1400px){
-	.contentContainer {
-		.leftSidebar{
-			width: 275px;
-		}
-		.rightSidebar{
-			width: 275px;
-		}
-		.centerContent{
-			width: calc(100% - 550px;)
-		}
-	}
-}
-
-@media (max-width: 1024px){
-	.contentContainer {
-		.leftSidebar{
-			/*display: none;*/
-			position: absolute;
-	    z-index: 100000000;
-	    width: 100%;
-	    background: #fff;
-	    height: 100%;
-	    overflow: auto;
-	    top: 0;
-	    padding: 15px;
-	    left: -100%;
-	    transition: left linear 0.2s 0s;
-	    &.open{
-	    	left: 0;
-	    }
-		}
-		.rightSidebar{
-			/*display: none;*/
-			position: fixed;
-	    z-index: 100000000;
-	    width: 100%;
-	    background: #fff;
-	    height: 100%;
-	    overflow: auto;
-	    top: 0;
-	    padding: 15px;
-	    right: -100%;
-	    transition: right linear 0.2s 0s;
-	    &.open{
-	    	right: 0;
-	    }
-		}
-		.centerContent{
-			width: 100%;
-		}
-	}
-	.header {
-		.leftSide {
-			.logoLink{
-				width: 54px;
-				overflow: hidden;
-			}
-		}
-	}
-	.header {
-		.centerSide {
-			ul {
-				li{
-					padding: 0 5px;
-				}
-			}
-		}
-	}
-	.iconList {
-		li{
-			margin: 0 3px;
-		}
-	}
-	.arrowsCon{
-		display: block;
-	}
-	.arrowBtn{
-		position: fixed;
-    top: calc(50% - 30px);
-    background: #fff;
-    width: 40px;
-    height: 60px;
-    border: none;
-    left: 0;
-    box-shadow: 0 0 10px #e1dfdf;
-    z-index: 100;
-    opacity: 0.8;
-		&.right{
-			left: auto;
-			right: 0;
-		}
-	}
-	.crossSection{
-		display: block;
-		text-align: right;
-    margin-bottom: 13px;
-    font-size: 20px;
-    color: #9f9c9c;
-    padding: 0 5px;
-	}
-}
-
-
 .selecBox{
 	position: relative;
 	width: 120px;
@@ -1899,4 +1811,238 @@ html, body, #root{
 			font-size: 13px;
 		}
 	}
+}
+
+.chatList{
+	.accordion__button{
+		background: #fff;
+		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
+		border-radius: 4px;
+		font-size: 13px;
+		font-weight: 600;
+		line-height: 16px;
+		outline: none;
+		padding: 7px 10px;
+		position: relative;
+		padding-left: 25px;
+		margin-bottom: 10px;
+		transition: all linear 0.2s 0s;
+		i{
+			float: right;
+			display: inline-block;
+	    position: relative;
+	    top: -2px;
+	    cursor: pointer;
+		}
+		&:after{
+			content: '';
+			display: inline-block;
+			position: absolute;
+			border: solid 4px;
+			border-color: #000 transparent transparent transparent;
+			left: 10px;
+			top: 14px;
+			transition: all linear 0.2s 0s;
+		}
+	}	
+	.accordion__button[aria-expanded="false"] {
+		&:after{
+			transform: rotate(-90deg);	
+			top: 12px
+		}
+	}
+}
+
+.onMobile{
+	display: none !important;
+}
+
+.MuiDrawer-paper{
+	.centerSide{
+		width: 200px;
+		ul {
+			margin: 5px 0;
+			li{
+				a{
+					text-decoration: none;
+			    color: #60656f;
+			    font-weight: 700;
+			    padding: 5px 10px;
+			    font-size: 13px;
+			    display: block;
+				}
+			}
+		}
+	}
+}
+
+
+@media (max-width: 1400px){
+	.contentContainer {
+		.leftSidebar{
+			width: 275px;
+		}
+		.rightSidebar{
+			width: 275px;
+		}
+		.centerContent{
+			width: calc(100% - 550px;)
+		}
+	}
+}
+
+@media (max-width: 1024px){
+	.contentContainer {
+		height: auto;
+		.leftSidebar{
+			/*display: none;*/
+			position: absolute;
+	    z-index: 100000000;
+	    width: 100%;
+	    background: #fff;
+	    height: 100%;
+	    overflow: auto;
+	    top: 0;
+	    padding: 15px;
+	    left: -100%;
+	    transition: left linear 0.2s 0s;
+	    &.open{
+	    	left: 0;
+	    }
+		}
+		.rightSidebar{
+			/*display: none;*/
+			position: fixed;
+	    z-index: 100000000;
+	    width: 100%;
+	    background: #fff;
+	    height: 100%;
+	    overflow: auto;
+	    top: 0;
+	    padding: 15px;
+	    right: -100%;
+	    transition: right linear 0.2s 0s;
+	    &.open{
+	    	right: 0;
+	    }
+		}
+		.centerContent{
+			width: 100%;
+			height: auto;
+			&.bigArea{
+				width: 100%;
+			}
+			.centerBoxContainer{
+				height: auto;
+				.dealContentBox{
+					height: auto;
+					.tabContent.noDataCon{
+						min-height: 200px;
+					}
+				}
+			}
+		}
+	}
+	.header {
+		.leftSide {
+			.logoLink{
+				width: 38px;
+				overflow: hidden;
+			}
+		}
+	}
+	.header {
+		.centerSide {
+			ul {
+				li{
+					padding: 0 5px;
+				}
+			}
+		}
+	}
+	.iconList {
+		li{
+			margin: 0 3px;
+		}
+	}
+	.arrowsCon{
+		display: block;
+	}
+	.arrowBtn{
+		position: fixed;
+    top: calc(50% - 30px);
+    background: #fff;
+    width: 40px;
+    height: 60px;
+    border: none;
+    left: 0;
+    box-shadow: 0 0 10px #e1dfdf;
+    z-index: 100;
+    opacity: 0.8;
+		&.right{
+			left: auto;
+			right: 0;
+		}
+	}
+	.crossSection{
+		display: block;
+		text-align: right;
+    margin-bottom: 13px;
+    font-size: 20px;
+    color: #9f9c9c;
+    padding: 0 5px;
+	}
+	.dealContentBox {
+		flex-direction: column;
+		.customerInfoBox{
+			width: 100%;
+			border-bottom: solid 0.5px #DADEE5;
+			padding: 15px;
+		}
+		.dealInfoBox{
+			width: 100%;
+			padding: 15px;
+		}
+	}
+	.chatboxCon {
+		height: 100%;
+		.chatBody{
+			height: calc(100vh - 185px);
+		}
+	}
+}
+
+@media (max-width: 768px){
+	.onMobile{
+		display: inline-block !important;
+	}
+	.header {
+		>.centerSide{
+			display: none;
+		}
+		.rightSide{
+			width: calc(100% - 150px);
+		}
+	}
+}
+
+@media (max-width: 640px){
+	.bottomTabsCon {
+		flex-direction: column;
+		.bottomTabs{
+			width: 100%;
+		}
+		.searchTabs{
+			width: 100%;
+		}
+	}
+	.detailCards {
+		flex-wrap: wrap;
+		.cardBox{
+			width: 50%;
+			flex: none;
+			margin-bottom: 24px;
+		}
+	}
+	
 }

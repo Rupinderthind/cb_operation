@@ -15,6 +15,7 @@ const Chat = () => {
   const [openModal, setOpenModal] = useState(false)
   const [modalActiveTab, setModalActiveTab] = useState(0)
   const [barType, setBarType] = useState(null)
+  const [isTeamTab, setIsTeamTab] = useState(false)
 
   const onChangeModalTab = (currentTab) => {
     setModalActiveTab(currentTab)
@@ -215,7 +216,7 @@ const Chat = () => {
               </div>
     }
   }
-
+  console.log(isTeamTab)
 	return (
     <>
       <Header />
@@ -225,6 +226,7 @@ const Chat = () => {
       		<ChatList 
             openModal={() => setOpenModal(true)}
             openBar={openBar}
+            setIsTeamTab={setIsTeamTab}
           />
       	</div>
       	<div className="centerContent">
@@ -372,7 +374,7 @@ const Chat = () => {
       		</div>
       	</div>
       	<div className={barType == 'rightBar' ? "rightSidebar open" : "rightSidebar"}>
-      		<CustomerDetail openBar={openBar} />
+      		<CustomerDetail openBar={openBar} isTeamTab={isTeamTab} />
       	</div>
       </div>
 

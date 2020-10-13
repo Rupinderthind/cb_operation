@@ -4,6 +4,7 @@ import { Button } from 'reactstrap';
 import { connect } from "react-redux";
 import { loginUser } from '../../api/auth'
 import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
+import { toast } from "react-toastify";
 
 const intialForm = {email: '', password: ''};
 
@@ -14,11 +15,6 @@ function Login(props) {
 
   const formRef = useRef(null)
 
-  const onLogin = () => {
-    console.log('here')
-    props.dispatch(loginUser())
-  }
-
   /*
   * onchange event for form handle
   */
@@ -27,6 +23,30 @@ function Login(props) {
     form[key] = value;
     setLoginForm(form)
     setError(null)
+  }
+
+  const onSubmit = () => {
+    if (loading) {return}
+    if (!loginForm.email || !loginForm.password) {
+      toast.error("Please enter username and password");
+      return;
+    } else {
+      setLoading(true);
+      props.dispatch(loginUser(loginForm)).then(res => {
+        setLoading(false);
+        if (res.success) {
+          props.history.push("/dashboard");
+        } else {
+          toast.error(res.message);
+        }
+      });
+    }
+  };
+
+  const isDisable = () => {
+    if (!loginForm.email || !loginForm.password) {
+      return true
+    }
   }
 
   return (
@@ -42,7 +62,7 @@ function Login(props) {
           <div className="loginBox">
             <ValidatorForm
               ref={formRef}
-              onSubmit={event => {onLogin(event);}}
+              onSubmit={event => {onSubmit(event);}}
               style={{width: '100%'}}
             >
               <h3>Welcome to C&B Operations Workspace!</h3>
@@ -69,12 +89,11 @@ function Login(props) {
                 variant="outlined"
                 className="formElement"
               />
-              {/*<TextField label="Password" type="password" variant="outlined" className="formElement" />*/}
               <div className="text-right forgotLink">
                 <a href="">Forgot Password?</a>
               </div>
               <div className="btnCon text-center">
-                <Button color="primary" className="mainBtn">Sign In</Button>
+                <Button color="primary" className="mainBtn" disabled={isDisable()}>Sign In</Button>
               </div>
               <p className="loginText">By clicking Sign In, you acknowledge that you have read and understood, and agree to Arrow's Terms of Service and Privacy Policy.</p>
             </ValidatorForm>

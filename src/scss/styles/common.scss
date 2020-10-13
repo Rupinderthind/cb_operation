@@ -4,6 +4,13 @@
 	padding: 0;
 	font-family: 'Inter', sans-serif;
 }
+.form-control{
+	border-width: 0.5px;
+}
+.form-control:focus{
+	border-color: #000;
+	box-shadow: none;
+}
 html, body, #root{
 	height: 100%;
 	background: #f2f3f5;
@@ -1222,6 +1229,10 @@ html, body, #root{
 			height: 34px;
 			padding-left: 30px;
 			font-size: 14px;
+			&:focus{
+				border-color: #000;
+				box-shadow: none;
+			}
 		}
 	}
 }
@@ -1327,10 +1338,18 @@ html, body, #root{
 			.mainBtn{
 				width: 100%;
 				height: 44px;
-				background: #CED2D9;
+				background: #000;
 				border-radius: 4px;
 				color: #fff;
 				border-color: #CED2D9;
+				opacity: 1;
+				&:hover{
+					opacity: 0.8;
+				}
+				&[disabled]{
+					background: #CED2D9;
+					opacity: 1;
+				}
 			}
 		}
 		.loginText{
@@ -1395,6 +1414,9 @@ html, body, #root{
 	}
 	.MuiSelect-iconOutlined{
 		top: 6px;
+	}
+	.MuiFormHelperText-contained{
+		margin-top: 0;
 	}
 }
 
@@ -1875,6 +1897,8 @@ html, body, #root{
 		}
 	}
 }
+
+
 
 
 @media (max-width: 1400px){

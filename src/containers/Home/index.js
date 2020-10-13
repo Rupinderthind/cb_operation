@@ -8,12 +8,13 @@ import TableContent from '../../components/common/TableContent'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import CustomIcon from '../../components/common/CustomIcon'
 import NavigationArrow from '../../components/common/NavigationArrow'
+import { connect } from "react-redux";
 
 const tabs = ['Avaiable', 'Sold']
 const modalTabs = ['Text', 'Email', 'Social']
 
 function Home(props) {
-  console.log(props, 'test')
+  console.log(props, 'test123')
   const [activeTab, setActiveTab] = useState(0)
   const [modalActiveTab, setModalActiveTab] = useState(0)
   const [openModal, setOpenModal] = useState(false)
@@ -40,8 +41,6 @@ function Home(props) {
   const onChangeModalTab = (currentTab) => {
     setModalActiveTab(currentTab)
   }
-
-  console.log(props, 'tedst')
 
   const renderModalTabs = () => {
     if (modalActiveTab === 0) {
@@ -313,11 +312,20 @@ function Home(props) {
           <Button color="primary">Share</Button>
         </ModalFooter>
       </Modal>
-
-      
-
     </>
   );
 }
 
-export default Home;
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+const mapDispatchToProps = dispatch => ({
+  dispatch
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home);

@@ -275,7 +275,7 @@ function Profile(props) {
                         <i className="fa fa-arrow-up" />
                       </div>
                       <h5>0</h5>
-                      <h4>shared</h4>
+                      <h4>order in</h4>
                       <h3>$0.0</h3>
                     </div>
                   </div>
@@ -285,7 +285,7 @@ function Profile(props) {
                         <i className="fa fa-arrow-down" />
                       </div>
                       <h5>0</h5>
-                      <h4>shared</h4>
+                      <h4>order out</h4>
                       <h3>$0.0</h3>
                     </div>
                   </div>
@@ -295,7 +295,7 @@ function Profile(props) {
                         <i className="fa fa-dollar-sign" />
                       </div>
                       <h5>0</h5>
-                      <h4>shared</h4>
+                      <h4>sold</h4>
                       <h3>$0.0</h3>
                     </div>
                   </div>

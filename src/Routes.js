@@ -8,6 +8,7 @@ import Chat from './containers/Chat'
 import Team from './containers/Team'
 
 function Routes(props) {
+  console.log(props, 'routes')
   return (
     <Router>
       <Switch>

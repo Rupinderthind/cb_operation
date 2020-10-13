@@ -15,12 +15,12 @@ function Routes(props) {
   return (
     <Router>
       <Switch>
-        <AuthenticatedRoute path="/chat" exact component={Chat} />
-        <AuthenticatedRoute path="/" exact component={Home} />
-        <AuthenticatedRoute path="/customer" exact component={Customer} />
-        <AuthenticatedRoute path="/profile" exact component={Profile} />
+        <UnauthenticatedRoute path="/chat" exact component={Chat} />
+        <UnauthenticatedRoute path="/" exact component={Home} />
+        <UnauthenticatedRoute path="/customer" exact component={Customer} />
+        <UnauthenticatedRoute path="/profile" exact component={Profile} />
         <UnauthenticatedRoute path="/login" exact component={Login} />
-        <AuthenticatedRoute path="/team" exact component={Team} />
+        <UnauthenticatedRoute path="/team" exact component={Team} />
       </Switch>
     </Router>
   );

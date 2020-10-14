@@ -527,7 +527,8 @@ html, body, #root{
 			height: 30px;
 			font-size: 12px;
 			&:focus{
-				box-shadow: 0 0 20px #e8e5e5;
+				box-shadow: none;
+				border-color: #000;
 			}
 		}
 	}
@@ -1681,6 +1682,10 @@ html, body, #root{
 			color: #707580;
 			border-radius: 5px;
 			height: 36px;
+			&:focus{
+				box-shadow: none;
+				border-color: #000;
+			}
 		}
 		.sendBtn{
 			width: 30px;
@@ -1728,11 +1733,15 @@ html, body, #root{
 	select{
 		font-size: 12px;
 		width: 100%;
-		border: solid 1px #CED2D9;
+		border: solid 0.5px #CED2D9;
 		border-radius: 4px;
 		height: 34px;
 		padding: 0 10px;
 		appearance: none;
+		&:focus{
+			box-shadow: none;
+			border-color: #000;
+		}
 	}
 }
 
